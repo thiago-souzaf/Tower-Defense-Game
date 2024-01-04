@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -10,21 +11,35 @@ public class Node : MonoBehaviour
     private Color startColor;
 
     private Vector3 positionOffset = new(0, 0.5f);
+
+    BuildManager buildManager;
+
     void Start()
     {
+        buildManager = BuildManager.Instance;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (buildManager.turretToBuild == null)
+        {
+            Debug.Log("Select a turret");
+            return;
+        }
         if (turret != null)
         {
             Debug.Log("Já tem uma torre aqui!!");
             return;
         }
 
-        GameObject turretToBuild = BuildManager.Instance.turretToBuild;
+        GameObject turretToBuild = buildManager.turretToBuild;
         turret = Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
 
@@ -32,6 +47,10 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         rend.material.color = hoverColor;
     }
 
