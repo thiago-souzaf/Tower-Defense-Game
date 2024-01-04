@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
 
     public float maxRange = 20f;
 
+    public int bulletDamage = 5;
+
 
     private void Start()
     {
@@ -38,7 +40,10 @@ public class Bullet : MonoBehaviour
 
     private void HitTarget(GameObject enemyHit)
     {
-        Destroy(enemyHit);
+        if( enemyHit.TryGetComponent(out EnemyHealth enemyHealth))
+        {
+            enemyHealth.TakeDamage(bulletDamage);
+        }
         Destroy(gameObject);
     }
 

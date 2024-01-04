@@ -7,10 +7,12 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform target;
     private int waypointIndex = 0;
-    // Start is called before the first frame update
+
+    private EnemyHealth enemyHealth;
     void Start()
     {
         target = Waypoints.points[0];
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     private void Update()
@@ -34,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.CompareTag("End"))
         {
-            Destroy(gameObject);
+            enemyHealth.Die();
             Debug.Log("Chegou ao final");
         }
     }
