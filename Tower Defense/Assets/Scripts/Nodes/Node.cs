@@ -4,13 +4,14 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     [SerializeField] private Color hoverColor;
-
     private GameObject turret;
 
     private Renderer rend;
     private Color startColor;
 
     private Vector3 positionOffset = new(0, 0.5f);
+
+    public Vector3 PositionToBuild {  get { return transform.position + positionOffset; } }
 
     BuildManager buildManager;
 
@@ -28,26 +29,28 @@ public class Node : MonoBehaviour
             return;
         }
 
-        if (buildManager.turretToBuild == null)
+        if (!buildManager.HasTurretSelected)
         {
             Debug.Log("Select a turret");
             return;
         }
         if (turret != null)
         {
-            Debug.Log("Já tem uma torre aqui!!");
+            Debug.Log("This node already has a turret on");
             return;
         }
-
-        GameObject turretToBuild = buildManager.turretToBuild;
-        turret = Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+        turret = buildManager.BuildTurretOn(this);
+         
     }
 
-    
 
     private void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        if (!buildManager.HasTurretSelected)
         {
             return;
         }

@@ -779,8 +779,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Standard Turret
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4129,6 +4129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532291ecd7678784db0d165a6f596952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 7297314312622550668, guid: e94c7fe0d6e076b44b275340f8c35d25,
+      type: 3}
+    cost: 100
+  anotherTurret:
+    prefab: {fileID: 5175868409848924451, guid: 0c65221b53a17ec4289f258200c33724,
+      type: 3}
+    cost: 250
 --- !u!1001 &483439756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5556,6 +5564,7 @@ GameObject:
   - component: {fileID: 639866779}
   - component: {fileID: 639866781}
   - component: {fileID: 639866782}
+  - component: {fileID: 639866783}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5606,10 +5615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c448accd5872fb4685358dd1dc7e66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 7297314312622550668, guid: e94c7fe0d6e076b44b275340f8c35d25,
-    type: 3}
-  anotherTurretPrefab: {fileID: 5175868409848924451, guid: 0c65221b53a17ec4289f258200c33724,
-    type: 3}
+  turretToBuild:
+    prefab: {fileID: 0}
+    cost: 0
 --- !u!114 &639866782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5623,6 +5631,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveTxt: {fileID: 1401999414}
+--- !u!114 &639866783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639866778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9f5594f1a97b44bb063c7dfa49e7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1001 &645596139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6760,7 +6781,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 474910644}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: PurchaseOtherTurret
+        m_MethodName: SelectOtherTurret
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7121,7 +7142,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 474910644}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: PurchaseStandardTurret
+        m_MethodName: SelectStandardTurret
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12283,8 +12304,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Wave: x'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16239,8 +16260,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Other Turret
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
