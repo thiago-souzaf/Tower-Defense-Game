@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 2208798600624427516}
   - component: {fileID: 7898050035078632774}
   m_Layer: 5
-  m_Name: Standard Button
+  m_Name: Turret Select Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

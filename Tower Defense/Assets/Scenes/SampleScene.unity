@@ -4035,11 +4035,22 @@ MonoBehaviour:
   standardTurret:
     prefab: {fileID: 7297314312622550668, guid: e94c7fe0d6e076b44b275340f8c35d25,
       type: 3}
+    name: 
     cost: 100
   anotherTurret:
     prefab: {fileID: 5175868409848924451, guid: 0c65221b53a17ec4289f258200c33724,
       type: 3}
+    name: 
     cost: 250
+  turretsToSelect:
+  - prefab: {fileID: 7297314312622550668, guid: e94c7fe0d6e076b44b275340f8c35d25,
+      type: 3}
+    name: Standard
+    cost: 50
+  - prefab: {fileID: 5175868409848924451, guid: 0c65221b53a17ec4289f258200c33724,
+      type: 3}
+    name: Another
+    cost: 150
 --- !u!1001 &483439756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5523,6 +5534,7 @@ MonoBehaviour:
     type: 3}
   turretToBuild:
     prefab: {fileID: 0}
+    name: 
     cost: 0
 --- !u!114 &639866782
 MonoBehaviour:
@@ -9457,13 +9469,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 474910644}
     - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectOtherTurret
+      value: SelectTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Another
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19159,82 +19181,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 474910644}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Standard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd23bc94d484b6547871b0bceeabe2ea, type: 3}
---- !u!1001 &7511621377469554937
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852724033156578358, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6043630998420528827, guid: b6a8ec0253005c6408aefd202b34f1ac,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyDeathEffect
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b6a8ec0253005c6408aefd202b34f1ac, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -19246,4 +19220,3 @@ SceneRoots:
   - {fileID: 2045009442}
   - {fileID: 968204894}
   - {fileID: 596130002}
-  - {fileID: 7511621377469554937}

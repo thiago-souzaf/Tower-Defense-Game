@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
 
-    public TurretBlueprint standardTurret;
-    public TurretBlueprint anotherTurret;
+    public TurretBlueprint[] turretsToSelect;
 
     BuildManager buildManager;
 
@@ -12,15 +12,12 @@ public class Shop : MonoBehaviour
     {
         buildManager = BuildManager.Instance;
     }
-    public void SelectStandardTurret()
+
+    public void SelectTurret(string turretName)
     {
-        Debug.Log("Standard turret Selected");
-        buildManager.turretToBuild = standardTurret;
+        Debug.Log(turretName + " was selected to build");
+        TurretBlueprint turretSelected = Array.Find(turretsToSelect, turret => turret.name == turretName);
+        buildManager.turretToBuild = turretSelected;
     }
 
-    public void SelectOtherTurret()
-    {
-        Debug.Log("Other turret Select");
-        buildManager.turretToBuild = anotherTurret;
-    }
 }

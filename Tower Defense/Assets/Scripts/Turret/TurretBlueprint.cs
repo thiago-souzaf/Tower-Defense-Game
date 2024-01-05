@@ -4,5 +4,6 @@ using UnityEngine;
 public class TurretBlueprint
 {
     public GameObject prefab;
+    public string name;
     public int cost;
 }
