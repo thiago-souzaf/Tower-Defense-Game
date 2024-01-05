@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-
+    private PlayerStats playerStats;
     public static BuildManager Instance { get; private set; }
+
+    public GameObject buildEffect;
 
     [Header("Optional")]
     [Tooltip("Turret to build is a Turret Blueprint instance that is set when the user selects a turret from the shop")]
     public TurretBlueprint turretToBuild;
 
-    public bool HasTurretSelected {  get { return turretToBuild != null; }  }
+    public bool HasTurretSelected {  get { return turretToBuild.prefab != null; }  }
 
     private void Awake()
     {
@@ -22,17 +24,25 @@ public class BuildManager : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+        playerStats = GetComponent<PlayerStats>();
+    }
     public GameObject BuildTurretOn(Node node)
     {
-        if (PlayerStats.Money < turretToBuild.cost){
+        if (playerStats.Money < turretToBuild.cost)
+        {
             Debug.Log("Not enough money");
             return null;
         }
-        PlayerStats.Money -= turretToBuild.cost;
+        playerStats.Money -= turretToBuild.cost;
 
         GameObject turret = Instantiate(turretToBuild.prefab, node.PositionToBuild, Quaternion.identity);
 
-        Debug.Log("Turret build, money left: " + PlayerStats.Money);
+        GameObject buildEffectGO = Instantiate(buildEffect, node.PositionToBuild, Quaternion.identity);
+
+        Destroy(buildEffectGO, 2f);
+
         return turret;
     }
 }

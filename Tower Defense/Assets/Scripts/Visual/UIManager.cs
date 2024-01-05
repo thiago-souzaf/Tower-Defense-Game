@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI waveTxt;
+    public TextMeshProUGUI waveNumberTxt;
+    public TextMeshProUGUI moneyTxt;
 
     public void UpdateWave(int currentWave)
     {
-        waveTxt.text = "Wave: " + currentWave;
+        waveNumberTxt.text = currentWave.ToString();
+    }
+
+    public void UpdateMoney(int currentMoney)
+    {
+        moneyTxt.text = "M $" + currentMoney;
     }
 }
