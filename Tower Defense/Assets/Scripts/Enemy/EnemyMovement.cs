@@ -9,10 +9,13 @@ public class EnemyMovement : MonoBehaviour
     private int waypointIndex = 0;
 
     private EnemyHealth enemyHealth;
+
+    private PlayerStats playerStats;
     void Start()
     {
         target = Waypoints.points[0];
         enemyHealth = GetComponent<EnemyHealth>();
+        playerStats = GameObject.Find("GameManager").GetComponent<PlayerStats>();
     }
 
     private void Update()
@@ -32,12 +35,19 @@ public class EnemyMovement : MonoBehaviour
         target = Waypoints.points[waypointIndex];
     }
 
+    void EndPath()
+    {
+        enemyHealth.Die();
+        playerStats.Lives--;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("End"))
         {
-            enemyHealth.Die();
-            Debug.Log("Chegou ao final");
+            EndPath();
         }
     }
+
+
 }

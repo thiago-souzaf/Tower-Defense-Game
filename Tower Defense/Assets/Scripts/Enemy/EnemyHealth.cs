@@ -3,19 +3,28 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int fullHealth = 10;
-    public int health {  get; private set; }
+    public int Health {  get; private set; }
+
+    [Tooltip("Money the player will get when this enemy dies")]
+    public int value = 50;
 
     private EnemySpawner spawner;
+    private PlayerStats playerStats;
+
+    private EnemyVFX vfx;
 
     private void Start()
     {
-        health = fullHealth;
-        spawner = GameObject.Find("GameManager").GetComponent<EnemySpawner>();
+        Health = fullHealth;
+        GameObject gameManager = GameObject.Find("GameManager");
+        spawner = gameManager.GetComponent<EnemySpawner>();
+        playerStats = gameManager.GetComponent<PlayerStats>();
+        vfx = GetComponent<EnemyVFX>();
     }
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
+        Health -= damage;
+        if (Health <= 0)
         {
             Die();
         }
@@ -25,5 +34,7 @@ public class EnemyHealth : MonoBehaviour
     {
         spawner.DecrementEnemy();
         Destroy(gameObject);
+        playerStats.Money += value;
+        vfx.OnDeath();
     }
 }

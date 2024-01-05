@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1515783207927759803}
   - component: {fileID: 7435349559899685314}
   - component: {fileID: 1035485007158789835}
-  - component: {fileID: 3430815894903821121}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3430815894903821121
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2469836110201526577}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3909129778448577884
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +94,6 @@ GameObject:
   - component: {fileID: 6438959196366671625}
   - component: {fileID: 1223705429328351244}
   - component: {fileID: 5166718009537647263}
-  - component: {fileID: 8567635461585580271}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -189,27 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8567635461585580271
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909129778448577884}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3937718261682174961
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +181,7 @@ GameObject:
   - component: {fileID: 1923605419216937577}
   - component: {fileID: -5093042457477653167}
   - component: {fileID: -7824508814059798775}
+  - component: {fileID: 7169948995496625062}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -332,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747508cb06e4bb447a0e4aaf5267f165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
 --- !u!54 &-5093042457477653167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -373,3 +330,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullHealth: 10
+  value: 50
+--- !u!114 &7169948995496625062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937718261682174961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fae92ec868a5d9428df624e265c8247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffects: {fileID: 6043630998420528827, guid: b6a8ec0253005c6408aefd202b34f1ac,
+    type: 3}
