@@ -5,17 +5,17 @@ public class EnemySpawner : MonoBehaviour
 {
     public int enemiesAlive;
     private Transform spawnPoint;
-    private int wave = 1;
+    private int wave;
 
     [SerializeField] private GameObject enemyPrefab;
 
     [SerializeField] private float spawnInterval;
 
-    private UIManager uiManager;
+    private PlayerStats playerStats;
 
     private void Awake()
     {
-        uiManager = GetComponent<UIManager>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         wave++;
-        uiManager.UpdateWave(wave);
+        playerStats.Round = wave;
         for (int i = 0; i < wave; i++)
         {
             SpawnEnemy();

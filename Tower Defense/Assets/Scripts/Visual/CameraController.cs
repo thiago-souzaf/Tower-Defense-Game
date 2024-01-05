@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetKeyDown(toggleMovementKey)) { canMove = !canMove; }
 
-        if (!canMove) { return; }
+        if (!canMove || GameManager.isGameOver) { return; }
         
         Vector3 pos = transform.position;
 

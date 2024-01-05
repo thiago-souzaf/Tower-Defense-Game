@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour
     {
         get { return lives; }
         set
-        { 
+        {
             lives = value;
             uiManager.UpdateLives(lives);
             if (lives <= 0)
@@ -32,11 +32,27 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void Start()
+    // Round properties
+    public int startRound = 0;
+    private int round;
+    public int Round
+    { 
+        get { return round; }
+        set
+        {
+            round = value;
+            uiManager.UpdateRound(round);
+        }
+    }
+
+    private void Awake()
     {
         uiManager = GetComponent<UIManager>();
         gameManager = GetComponent<GameManager>();
-
+    }
+    void Start()
+    {
+        
         Money = startMoney;
         Lives = startLives;
     }
