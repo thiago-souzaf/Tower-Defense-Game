@@ -7281,6 +7281,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Retry Button
       objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1086851553}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20028,6 +20063,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Home Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1086851553}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054689776660989177, guid: 220de02aabfb3f54aa7d51bd6ce9ad44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
