@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectedNodeUI : MonoBehaviour
 {
     public GameObject ui;
     public TextMeshProUGUI turretName;
+    public TextMeshProUGUI upgradeCost;
+    public Button upgradeButton;
     
 
     private Node selectedNode;
@@ -15,6 +18,15 @@ public class SelectedNodeUI : MonoBehaviour
             selectedNode = value;
             ui.SetActive(true);
             turretName.text = GetTurretName(selectedNode);
+            if (selectedNode.isUpgraded)
+            {
+                upgradeCost.text = "MAX";
+                upgradeButton.interactable = false;
+            } else
+            {
+                upgradeCost.text = "$ " + selectedNode.turretBlueprint.upgradeCost;
+                upgradeButton.interactable = true;
+            }
         }
     }
 
@@ -30,5 +42,14 @@ public class SelectedNodeUI : MonoBehaviour
             return turretStats.info.name;
         }
         return "[name not found]";
+    }
+
+    public void Upgrade()
+    {
+        if (selectedNode != null)
+        {
+            selectedNode.UpgradeTurret();
+            BuildManager.Instance.DeselectNode();
+        }
     }
 }

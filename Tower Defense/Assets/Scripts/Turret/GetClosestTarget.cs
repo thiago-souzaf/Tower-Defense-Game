@@ -8,7 +8,6 @@ public class GetClosestTarget : MonoBehaviour
     {
         turret = GetComponent<Turret>();
         InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
-
     }
     
     private void UpdateTarget()
@@ -38,8 +37,18 @@ public class GetClosestTarget : MonoBehaviour
         }
     }
 
+    // Draw the turret range on editor view
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, turret.range);
+        // if it isn't on play mode, it will not get the turret component and will not show the correct range for each turret
+        float radius;
+        if (turret != null)
+        {
+            radius = turret.range;
+        } else
+        {
+            radius = 15f;
+        }
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

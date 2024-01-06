@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-    private PlayerStats playerStats;
     public static BuildManager Instance { get; private set; }
 
     public GameObject buildEffect;
@@ -62,28 +61,7 @@ public class BuildManager : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        playerStats = GetComponent<PlayerStats>();
-    }
-    public GameObject BuildTurretOn(Node node)
-    {
-        if (playerStats.Money < TurretToBuild.cost)
-        {
-            Debug.Log("Not enough money");
-            return null;
-        }
-        playerStats.Money -= TurretToBuild.cost;
-
-        GameObject turret = Instantiate(TurretToBuild.prefab, node.PositionToBuild, Quaternion.identity);
-        turret.GetComponent<Turret>().info = TurretToBuild;
-
-        GameObject buildEffectGO = Instantiate(buildEffect, node.PositionToBuild, Quaternion.identity);
-
-        Destroy(buildEffectGO, 2f);
-
-        return turret;
-    }
+    
 
     public void DeselectNode()
     {
