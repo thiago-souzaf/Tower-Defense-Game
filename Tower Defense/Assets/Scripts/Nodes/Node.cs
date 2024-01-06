@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     [SerializeField] private Color hoverColor;
-    private GameObject turret;
+    public GameObject turret;
 
     private Renderer rend;
     private Color startColor;
@@ -29,14 +29,15 @@ public class Node : MonoBehaviour
             return;
         }
 
-        if (!buildManager.HasTurretSelected)
+        
+        if (turret != null) // If there is a turret on top of this node
         {
-            Debug.Log("Select a turret");
+            buildManager.SelectedNode = this;
             return;
         }
-        if (turret != null)
+        if (!buildManager.HasTurretSelected) // If the user hasn't selected a turret from the shop
         {
-            Debug.Log("This node already has a turret on");
+            Debug.Log("Select a turret");
             return;
         }
         turret = buildManager.BuildTurretOn(this);

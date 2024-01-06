@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
     {
         Debug.Log(turretName + " was selected to build");
         TurretBlueprint turretSelected = Array.Find(turretsToSelect, turret => turret.name == turretName);
-        buildManager.turretToBuild = turretSelected;
+        buildManager.TurretToBuild = turretSelected;
     }
 
 }

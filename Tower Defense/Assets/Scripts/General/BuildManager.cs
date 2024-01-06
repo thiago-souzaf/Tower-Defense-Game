@@ -7,11 +7,49 @@ public class BuildManager : MonoBehaviour
 
     public GameObject buildEffect;
 
+    public SelectedNodeUI nodeUI;
+
     [Header("Optional")]
     [Tooltip("Turret to build is a Turret Blueprint instance that is set when the user selects a turret from the shop")]
-    public TurretBlueprint turretToBuild;
+    [SerializeField] private TurretBlueprint turretToBuild;
+    public TurretBlueprint TurretToBuild
+    {
+        get
+        {
+            if (turretToBuild == null || turretToBuild.prefab == null)
+            {
+                return null;
+            }
+            return turretToBuild;
+        }
+        set
+        {
+            turretToBuild = value;
+            DeselectNode();
+        }
+    }
+    [Tooltip("Selected node is a Node instance that is set when the user clicks on top of a node with a turret built on")]
+    [SerializeField] private Node selectedNode;
+    public Node SelectedNode
+    {
+        get { return selectedNode;}
+        set
+        {
 
-    public bool HasTurretSelected {  get { return turretToBuild.prefab != null; }  }
+            if (selectedNode == value)
+            {
+                DeselectNode();
+                return;
+            }
+            selectedNode = value;
+            turretToBuild = null;
+
+            nodeUI.SelectedNode = selectedNode;
+        }
+    }
+
+
+    public bool HasTurretSelected {  get { return TurretToBuild != null; }  }
 
     private void Awake()
     {
@@ -30,19 +68,25 @@ public class BuildManager : MonoBehaviour
     }
     public GameObject BuildTurretOn(Node node)
     {
-        if (playerStats.Money < turretToBuild.cost)
+        if (playerStats.Money < TurretToBuild.cost)
         {
             Debug.Log("Not enough money");
             return null;
         }
-        playerStats.Money -= turretToBuild.cost;
+        playerStats.Money -= TurretToBuild.cost;
 
-        GameObject turret = Instantiate(turretToBuild.prefab, node.PositionToBuild, Quaternion.identity);
+        GameObject turret = Instantiate(TurretToBuild.prefab, node.PositionToBuild, Quaternion.identity);
 
         GameObject buildEffectGO = Instantiate(buildEffect, node.PositionToBuild, Quaternion.identity);
 
         Destroy(buildEffectGO, 2f);
 
         return turret;
+    }
+
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
     }
 }
