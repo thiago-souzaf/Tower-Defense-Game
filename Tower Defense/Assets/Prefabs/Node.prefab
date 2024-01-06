@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3890245681519334105}
   - component: {fileID: 4609278988217104958}
   - component: {fileID: 5267802836731580133}
-  - component: {fileID: 1264901559491220971}
+  - component: {fileID: 2252162234015266339}
+  - component: {fileID: 2350525101659668562}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -106,7 +107,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1264901559491220971
+--- !u!114 &2252162234015266339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +116,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 7990535452062347913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4edea1dfc2d83d74989ee4cfcce2218a, type: 3}
+  m_Script: {fileID: 11500000, guid: d872d2ccd35b7f143ad2cadcafd7e092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.38042897, g: 0.5645033, b: 0.9716981, a: 0}
+  turret: {fileID: 0}
+  turretBlueprint:
+    prefab: {fileID: 0}
+    name: 
+    cost: 0
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 0
+  isUpgraded: 0
+  buildEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
+    type: 3}
+  upgradeEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
+    type: 3}
+  sellEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
+    type: 3}
+--- !u!114 &2350525101659668562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990535452062347913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c487fddc68ec84a40b2384451fde7254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.2793699, g: 0.45668694, b: 0.8113208, a: 1}

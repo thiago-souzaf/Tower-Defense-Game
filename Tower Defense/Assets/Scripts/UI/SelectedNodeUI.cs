@@ -6,27 +6,23 @@ public class SelectedNodeUI : MonoBehaviour
 {
     public GameObject ui;
     public TextMeshProUGUI turretName;
+
     public TextMeshProUGUI upgradeCost;
     public Button upgradeButton;
+
+    public TextMeshProUGUI sellCost;
     
 
-    private Node selectedNode;
-    public Node SelectedNode
+    private NodeBuilder selectedNode;
+    public NodeBuilder SelectedNode
     {
         set
         {
             selectedNode = value;
             ui.SetActive(true);
             turretName.text = GetTurretName(selectedNode);
-            if (selectedNode.isUpgraded)
-            {
-                upgradeCost.text = "MAX";
-                upgradeButton.interactable = false;
-            } else
-            {
-                upgradeCost.text = "$ " + selectedNode.turretBlueprint.upgradeCost;
-                upgradeButton.interactable = true;
-            }
+            SetUpgradePrice(selectedNode.isUpgraded);
+            SetSellCost(selectedNode);
         }
     }
 
@@ -35,7 +31,7 @@ public class SelectedNodeUI : MonoBehaviour
         ui.SetActive(false);
     }
 
-    public string GetTurretName(Node node)
+    private string GetTurretName(NodeBuilder node)
     {
         if (node.turret.TryGetComponent(out Turret turretStats))
         {
@@ -44,12 +40,40 @@ public class SelectedNodeUI : MonoBehaviour
         return "[name not found]";
     }
 
+    private void SetUpgradePrice(bool isUpgraded)
+    {
+        if (isUpgraded)
+        {
+            upgradeCost.text = "MAX";
+            upgradeButton.interactable = false;
+        }
+        else
+        {
+            upgradeCost.text = "$ " + selectedNode.turretBlueprint.upgradeCost;
+            upgradeButton.interactable = true;
+        }
+    }
+
+    private void SetSellCost(NodeBuilder node)
+    {
+        sellCost.text = "$ " + node.turretBlueprint.SellAmount;
+    }
+
     public void Upgrade()
     {
         if (selectedNode != null)
         {
             selectedNode.UpgradeTurret();
-            BuildManager.Instance.DeselectNode();
+            SelectionManager.Instance.DeselectNode();
+        }
+    }
+
+    public void Sell()
+    {
+        if (selectedNode != null)
+        {
+            selectedNode.SellTurret();
+            SelectionManager.Instance.DeselectNode();
         }
     }
 }

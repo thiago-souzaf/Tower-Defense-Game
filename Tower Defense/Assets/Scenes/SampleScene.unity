@@ -2387,6 +2387,7 @@ MonoBehaviour:
   turretName: {fileID: 1112363661}
   upgradeCost: {fileID: 1341396823}
   upgradeButton: {fileID: 252605591}
+  sellCost: {fileID: 1193684347}
 --- !u!1001 &258704716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5920,11 +5921,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 639866778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c448accd5872fb4685358dd1dc7e66b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dc5c27b77a6b39489e2bdb843525241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
-    type: 3}
   nodeUI: {fileID: 255678608}
   turretToBuild:
     prefab: {fileID: 0}
@@ -16485,7 +16484,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1632074889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 255678608}
+        m_TargetAssemblyTypeName: SelectedNodeUI, Assembly-CSharp
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1632074889
 MonoBehaviour:
   m_ObjectHideFlags: 0

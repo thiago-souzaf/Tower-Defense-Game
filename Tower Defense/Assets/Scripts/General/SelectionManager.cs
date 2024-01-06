@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class BuildManager : MonoBehaviour
+public class SelectionManager : MonoBehaviour
 {
-    public static BuildManager Instance { get; private set; }
-
-    public GameObject buildEffect;
+    public static SelectionManager Instance { get; private set; }
 
     public SelectedNodeUI nodeUI;
 
@@ -28,8 +26,8 @@ public class BuildManager : MonoBehaviour
         }
     }
     [Tooltip("Selected node is a Node instance that is set when the user clicks on top of a node with a turret built on")]
-    [SerializeField] private Node selectedNode;
-    public Node SelectedNode
+    [SerializeField] private NodeBuilder selectedNode;
+    public NodeBuilder SelectedNode
     {
         get { return selectedNode;}
         set
@@ -47,7 +45,6 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-
     public bool HasTurretSelected {  get { return TurretToBuild != null; }  }
 
     private void Awake()
@@ -60,9 +57,6 @@ public class BuildManager : MonoBehaviour
         Instance = this;
         
     }
-
-    
-
     public void DeselectNode()
     {
         selectedNode = null;
