@@ -14,12 +14,21 @@ public class SelectedNodeUI : MonoBehaviour
         {
             selectedNode = value;
             ui.SetActive(true);
-            turretName.text = selectedNode.turret.name;
+            turretName.text = GetTurretName(selectedNode);
         }
     }
 
     public void Hide()
     {
         ui.SetActive(false);
+    }
+
+    public string GetTurretName(Node node)
+    {
+        if (node.turret.TryGetComponent(out Turret turretStats))
+        {
+            return turretStats.info.name;
+        }
+        return "[name not found]";
     }
 }

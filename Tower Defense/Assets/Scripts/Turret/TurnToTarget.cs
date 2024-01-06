@@ -1,26 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(Turret))]
 public class TurnToTarget : MonoBehaviour
 {
-    public Transform partToRotate;
-    private GetClosestTarget target;
+    private Turret turret;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GetComponent<GetClosestTarget>();
+        turret = GetComponent<Turret>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target.target != null)
+        if (turret.target != null)
         {
-            Vector3 lookPoint = new(target.target.position.x, partToRotate.position.y, target.target.position.z);
-            partToRotate.LookAt(lookPoint);
+            Vector3 lookPoint = new(turret.target.position.x, turret.partToRotate.position.y, turret.target.position.z);
+            turret.partToRotate.LookAt(lookPoint);
         }
         
     }

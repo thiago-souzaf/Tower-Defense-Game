@@ -1,31 +1,24 @@
 using UnityEngine;
-
+[RequireComponent (typeof(Turret))]
 public class Shooting : MonoBehaviour
 {
 
-    private GetClosestTarget target;
-
-    public float fireRate;
+    private Turret turret;
 
     private float nextTimeToShoot;
-
-    public GameObject bulletPrefab;
-    public Transform bulletSpawnPoint;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GetComponent<GetClosestTarget>();
+        turret = GetComponent<Turret>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target.target != null && Time.time >= nextTimeToShoot)
+        if (turret.target != null && Time.time >= nextTimeToShoot)
         {
-            nextTimeToShoot = Time.time + 1f/fireRate;
+            nextTimeToShoot = Time.time + 1f/turret.fireRate;
             Shoot();
         }
     }
@@ -34,11 +27,11 @@ public class Shooting : MonoBehaviour
     {
         Debug.Log(transform.name + " is Shooting!");
 
-        GameObject bulletGO = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        GameObject bulletGO = Instantiate(turret.bulletPrefab, turret.bulletSpawnPoint.position, turret.bulletSpawnPoint.rotation);
 
         if(bulletGO.TryGetComponent(out Bullet bullet))
         {
-            bullet.Seek(target.target);
+            bullet.Seek(turret.target);
         }
     }
 }

@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 7140259913540644575}
   - component: {fileID: 6363422089119041684}
   - component: {fileID: 34573137835129107}
+  - component: {fileID: 5393245661863821431}
   m_Layer: 0
   m_Name: Turret 1
   m_TagString: Untagged
@@ -259,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 5175868409848924451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.5, y: 4, z: -7.5}
+  m_LocalPosition: {x: -27.5, y: 0.5, z: 32.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -279,9 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcdab47793a8784bbc29901fc16d682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  range: 12
-  enemyTag: Enemy
 --- !u!114 &6363422089119041684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646a9dca35533f647b798a2aed6d4cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partToRotate: {fileID: 3947625718064764921}
 --- !u!114 &34573137835129107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,10 +304,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c2ba5caa1b81a48a229d674f9f2cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+--- !u!114 &5393245661863821431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175868409848924451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b664d1e7192c28e4ab9237acd220c37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  startRange: 15
+  range: 0
+  enemyTag: Enemy
+  startFireRate: 1
+  fireRate: 0
   bulletPrefab: {fileID: 8376681165471850897, guid: aaf4704cb1673104e87db613e2ca2173,
     type: 3}
   bulletSpawnPoint: {fileID: 5103498078664784063}
+  partToRotate: {fileID: 3947625718064764921}
+  info:
+    prefab: {fileID: 0}
+    name: 
+    cost: 0
 --- !u!1 &5501134131093721454
 GameObject:
   m_ObjectHideFlags: 0
