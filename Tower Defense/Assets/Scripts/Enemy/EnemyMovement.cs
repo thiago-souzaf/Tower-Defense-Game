@@ -11,6 +11,8 @@ public class EnemyMovement : MonoBehaviour
     private EnemyHealth enemyHealth;
 
     private PlayerStats playerStats;
+
+    public Transform enemyBody;
     void Start()
     {
         target = Waypoints.points[0];
@@ -20,8 +22,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(target.position);
-        transform.Translate(speed * Time.deltaTime * transform.forward, Space.World);
+        // Rotates the enemy body to look at the next target
+        enemyBody.LookAt(target.position);
+
+        Vector3 dirToTarget = (target.position - transform.position).normalized;
+        transform.Translate(speed * Time.deltaTime * dirToTarget, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {

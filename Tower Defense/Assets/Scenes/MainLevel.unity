@@ -6513,7 +6513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesAlive: 0
-  enemyPrefab: {fileID: 3937718261682174961, guid: 90145038481b03846af36d79311233cf,
+  enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
     type: 3}
   spawnInterval: 1
 --- !u!4 &639866780
@@ -6566,7 +6566,7 @@ MonoBehaviour:
   roundNumberTxt: {fileID: 1599657993}
   moneyTxt: {fileID: 1961673362}
   livesTxt: {fileID: 1150439944}
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 1086851551}
 --- !u!114 &639866783
 MonoBehaviour:
   m_ObjectHideFlags: 0

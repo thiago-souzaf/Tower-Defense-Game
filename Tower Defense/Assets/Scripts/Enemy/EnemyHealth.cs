@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
     public int fullHealth = 10;
-    public int Health {  get; private set; }
+    [field: SerializeField] public int Health {  get; private set; }
 
     [Tooltip("Money the player will get when this enemy dies")]
     public int value = 50;
@@ -12,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
     private PlayerStats playerStats;
 
     private EnemyVFX vfx;
+
+    public Image healthBar;
 
     private void Start()
     {
@@ -24,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        healthBar.fillAmount = (float)Health / fullHealth;
         if (Health <= 0)
         {
             Die();
