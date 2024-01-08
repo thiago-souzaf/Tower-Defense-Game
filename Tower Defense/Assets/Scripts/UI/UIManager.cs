@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI moneyTxt;
     public TextMeshProUGUI livesTxt;
 
-    public GameObject gameOverScreen;
+    public GameObject gameOverMenu;
     public void UpdateRound(int currentRound)
     {
         roundNumberTxt.text = currentRound.ToString();
@@ -25,6 +25,6 @@ public class UIManager : MonoBehaviour
 
     public void OnGameOver()
     {
-        gameOverScreen.SetActive(true);
+        gameOverMenu.SetActive(true);
     }
 }

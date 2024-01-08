@@ -1,11 +1,7 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class CameraController : MonoBehaviour
 {
-    [Header("General")]
-    public KeyCode toggleMovementKey = KeyCode.Escape;
-    public bool canMove = true;
 
     [Header("Pan Properties")]
     public float panSpeed = 30f;
@@ -19,9 +15,12 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(toggleMovementKey)) { canMove = !canMove; }
 
-        if (!canMove || GameManager.isGameOver) { return; }
+        if (GameManager.isGameOver)
+        { 
+            this.enabled = false;
+            return;
+        }
         
         Vector3 pos = transform.position;
 

@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
     public TextMeshProUGUI roundsText;
     public PlayerStats playerStats;
