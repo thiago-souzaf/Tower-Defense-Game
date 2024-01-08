@@ -11,15 +11,18 @@ public class GameOverMenu : MonoBehaviour
     private void OnEnable()
     {
         roundsText.text = playerStats.Round.ToString();
+        Time.timeScale = 0f;
     }
 
     public void Home()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(homeSceneName);
     }
 
     public void Retry()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
