@@ -7,6 +7,7 @@ public class GameOverMenu : MonoBehaviour
     public TextMeshProUGUI roundsText;
     public PlayerStats playerStats;
 
+    public readonly string homeSceneName = "MainMenu";
     private void OnEnable()
     {
         roundsText.text = playerStats.Round.ToString();
@@ -14,7 +15,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void Home()
     {
-        Debug.LogError("Need implementation of home scene");
+        SceneManager.LoadScene(homeSceneName);
     }
 
     public void Retry()

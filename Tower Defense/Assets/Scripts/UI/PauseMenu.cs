@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public readonly string homeSceneName = "MainMenu";
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        Debug.LogError("Need implementation of home scene");
+        SceneManager.LoadScene(homeSceneName);
     }
 
     public void Retry()
