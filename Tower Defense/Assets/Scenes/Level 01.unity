@@ -7308,27 +7308,79 @@ MonoBehaviour:
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
         type: 3}
-      amountToSpawn: 2
+      amountToSpawn: 20
+    rateToSpawn: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
+        type: 3}
+      amountToSpawn: 35
+    rateToSpawn: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
+        type: 3}
+      amountToSpawn: 25
     - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
         type: 3}
-      amountToSpawn: 2
+      amountToSpawn: 5
+    rateToSpawn: 2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
+        type: 3}
+      amountToSpawn: 35
+    - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
+        type: 3}
+      amountToSpawn: 18
+    rateToSpawn: 2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
+        type: 3}
+      amountToSpawn: 5
+    - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
+        type: 3}
+      amountToSpawn: 27
+    rateToSpawn: 2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
+        type: 3}
+      amountToSpawn: 15
+    - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
+        type: 3}
+      amountToSpawn: 15
     - enemyPrefab: {fileID: 430430950368773536, guid: fffe2d50ed788b84bacea04ee50beede,
         type: 3}
-      amountToSpawn: 3
-    - enemyPrefab: {fileID: 430430950368773536, guid: 7b3eec8440c4f264a81af5616e88a559,
+      amountToSpawn: 4
+    rateToSpawn: 2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
         type: 3}
-      amountToSpawn: 3
-    - enemyPrefab: {fileID: 430430950368773536, guid: e316e1d3fbe1bae46818b07aadd9ebc6,
+      amountToSpawn: 20
+    - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
         type: 3}
-      amountToSpawn: 3
-    - enemyPrefab: {fileID: 430430950368773536, guid: 277a661e5ab51734b94154c09d8fa709,
+      amountToSpawn: 20
+    - enemyPrefab: {fileID: 430430950368773536, guid: fffe2d50ed788b84bacea04ee50beede,
         type: 3}
-      amountToSpawn: 3
+      amountToSpawn: 5
+    rateToSpawn: 2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: 90145038481b03846af36d79311233cf,
+        type: 3}
+      amountToSpawn: 10
+    - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
+        type: 3}
+      amountToSpawn: 20
+    - enemyPrefab: {fileID: 430430950368773536, guid: fffe2d50ed788b84bacea04ee50beede,
+        type: 3}
+      amountToSpawn: 14
+    rateToSpawn: 2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 430430950368773536, guid: fffe2d50ed788b84bacea04ee50beede,
+        type: 3}
+      amountToSpawn: 30
     rateToSpawn: 2
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 430430950368773536, guid: 48e4e421153f9214ab6a73ed0e244cbf,
         type: 3}
-      amountToSpawn: 10
+      amountToSpawn: 102
     rateToSpawn: 2
 --- !u!4 &639866780
 Transform:
