@@ -7,6 +7,8 @@ public class GameOverMenu : MonoBehaviour
     public TextMeshProUGUI roundsText;
     public PlayerStats playerStats;
 
+    public SceneFader sceneFader;
+
     public readonly string homeSceneName = "MainMenu";
     private void OnEnable()
     {
@@ -17,12 +19,12 @@ public class GameOverMenu : MonoBehaviour
     public void Home()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(homeSceneName);
+        sceneFader.FadeTo(homeSceneName);
     }
 
     public void Retry()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 }
