@@ -6,9 +6,7 @@ public class SelectionManager : MonoBehaviour
 
     public SelectedNodeUI nodeUI;
 
-    [Header("Optional")]
-    [Tooltip("Turret to build is a Turret Blueprint instance that is set when the user selects a turret from the shop")]
-    [SerializeField] private TurretBlueprint turretToBuild;
+    private TurretBlueprint turretToBuild;
     public TurretBlueprint TurretToBuild
     {
         get
@@ -25,8 +23,7 @@ public class SelectionManager : MonoBehaviour
             DeselectNode();
         }
     }
-    [Tooltip("Selected node is a Node instance that is set when the user clicks on top of a node with a turret built on")]
-    [SerializeField] private NodeBuilder selectedNode;
+    private NodeBuilder selectedNode;
     public NodeBuilder SelectedNode
     {
         get { return selectedNode;}

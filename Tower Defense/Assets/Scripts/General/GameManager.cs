@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     public int levelToUnlock;
 
+    public UnityEvent OnGameOver;
+
+    public UnityEvent OnLevelComplete;
+
     private void Start()
     {
         isGameOver = false;
@@ -14,12 +19,13 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         isGameOver = true;
-        GetComponent<UIManager>().OnGameOver();
+        OnGameOver.Invoke();
         Debug.Log("Game Over");
     }
 
     public void WinLevel()
     {
+        OnLevelComplete.Invoke();
         Debug.Log("Level Finished");
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
     }

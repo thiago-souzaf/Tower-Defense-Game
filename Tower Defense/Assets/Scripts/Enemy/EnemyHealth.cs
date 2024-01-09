@@ -16,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
 
     public Image healthBar;
 
+    private bool isDead;
+
     private void Start()
     {
         Health = fullHealth;
@@ -28,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
     {
         Health -= damage;
         healthBar.fillAmount = (float)Health / fullHealth;
-        if (Health <= 0)
+        if (Health <= 0 && !isDead)
         {
             Die(true);
         }
@@ -36,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die(bool increaseMoney)
     {
+        isDead = true;
         spawner.EnemiesAlive--;
         Destroy(gameObject);
         vfx.OnDeath();
