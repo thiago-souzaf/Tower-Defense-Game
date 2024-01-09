@@ -622,6 +622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 418819718}
+  levelButtons:
+  - {fileID: 1558717750}
+  - {fileID: 1985414517}
 --- !u!1001 &807873977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,6 +1322,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f4e3b026c40574eb9ac4980402e6bb, type: 3}
+--- !u!114 &1558717750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4181954735030581469, guid: f93120262246b884b85d50898786d599,
+    type: 3}
+  m_PrefabInstance: {fileID: 868594346233474470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1903902239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1409,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903902239}
   m_CullTransparentMesh: 1
+--- !u!114 &1985414517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4181954735030581469, guid: f93120262246b884b85d50898786d599,
+    type: 3}
+  m_PrefabInstance: {fileID: 807873977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &868594346233474470
 PrefabInstance:
   m_ObjectHideFlags: 0

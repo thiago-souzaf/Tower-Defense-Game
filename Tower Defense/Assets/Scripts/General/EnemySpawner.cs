@@ -26,12 +26,15 @@ public class EnemySpawner : MonoBehaviour
     private int amountOfWaves;
 
     private PlayerStats playerStats;
+    private GameManager manager;
 
     private bool hasSpawnedAll;
+
 
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
+        manager = GetComponent<GameManager>();
     }
 
     // Start is called before the first frame update
@@ -52,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
         {
             // Waves finished
             // TODO: implement "level complete" screen
-            Debug.Log("Level finished");
+            manager.WinLevel();
             this.enabled = false;
             yield break;
         }
