@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
     void EndPath()
     {
-        enemyHealth.Die();
+        enemyHealth.Die(false);
         playerStats.Lives--;
     }
 

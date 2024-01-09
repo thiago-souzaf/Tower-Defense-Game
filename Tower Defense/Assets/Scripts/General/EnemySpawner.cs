@@ -3,15 +3,31 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public int enemiesAlive;
+    private int enemiesAlive;
+    public int EnemiesAlive
+    {
+        get { return enemiesAlive; }
+        set
+        {
+            enemiesAlive = value;
+            if (enemiesAlive <= 0 && hasSpawnedAll)
+            {
+                StartCoroutine(SpawnWave());
+            }
+        }
+    }
+
     private Transform spawnPoint;
-    private int wave;
 
-    [SerializeField] private GameObject enemyPrefab;
+    public Wave[] waves;
 
-    [SerializeField] private float spawnInterval;
+    private int waveIndex;
+
+    private int amountOfWaves;
 
     private PlayerStats playerStats;
+
+    private bool hasSpawnedAll;
 
     private void Awake()
     {
@@ -22,33 +38,45 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         spawnPoint = GameObject.Find("START").transform;
-        wave = 0;
+        waveIndex = 0;
+        amountOfWaves = waves.Length;
+        playerStats.lastRound = amountOfWaves;
         StartCoroutine(SpawnWave());
+
     }
 
     IEnumerator SpawnWave()
     {
-        wave++;
-        playerStats.Round = wave;
-        for (int i = 0; i < wave; i++)
+
+        if (waveIndex >= waves.Length)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(spawnInterval);
+            // Waves finished
+            // TODO: implement "level complete" screen
+            Debug.Log("Level finished");
+            this.enabled = false;
+            yield break;
         }
+
+        Wave curretWave = waves[waveIndex];
+        hasSpawnedAll = false;
+        playerStats.CurrentRound = waveIndex + 1;
+
+        foreach (EnemyCounter enemyCounter in curretWave.enemiesToSpawn)
+        {
+            for (int i = 0; i < enemyCounter.amountToSpawn; i++)
+            {
+                yield return new WaitForSeconds(1f/ curretWave.rateToSpawn);
+                SpawnEnemy(enemyCounter.enemyPrefab);
+            }
+        }
+        hasSpawnedAll = true;
+        waveIndex++;
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemyToSpawn)
     {
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity);
         enemiesAlive++;
     }
 
-    public void DecrementEnemy()
-    {
-        enemiesAlive--;
-        if (enemiesAlive <= 0)
-        {
-            StartCoroutine(SpawnWave());
-        }
-    }
 }

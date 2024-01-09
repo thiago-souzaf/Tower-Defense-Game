@@ -33,17 +33,18 @@ public class PlayerStats : MonoBehaviour
     }
 
     // Round properties
-    public int startRound = 0;
-    private int round;
-    public int Round
+    private int currentRound;
+    public int CurrentRound
     { 
-        get { return round; }
+        get { return currentRound; }
         set
         {
-            round = value;
-            uiManager.UpdateRound(round);
+            currentRound = value;
+            uiManager.UpdateRound(currentRound, lastRound);
         }
     }
+
+    public int lastRound;
 
     private void Awake()
     {
@@ -52,7 +53,6 @@ public class PlayerStats : MonoBehaviour
     }
     void Start()
     {
-        
         Money = startMoney;
         Lives = startLives;
     }

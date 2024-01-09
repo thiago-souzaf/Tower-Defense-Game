@@ -30,15 +30,16 @@ public class EnemyHealth : MonoBehaviour
         healthBar.fillAmount = (float)Health / fullHealth;
         if (Health <= 0)
         {
-            Die();
+            Die(true);
         }
     }
 
-    public void Die()
+    public void Die(bool increaseMoney)
     {
-        spawner.DecrementEnemy();
+        spawner.EnemiesAlive--;
         Destroy(gameObject);
-        playerStats.Money += value;
         vfx.OnDeath();
+        if (increaseMoney) { playerStats.Money += value; }
+        
     }
 }

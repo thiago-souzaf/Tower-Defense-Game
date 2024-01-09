@@ -25,7 +25,6 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log(transform.name + " is Shooting!");
 
         GameObject bulletGO = Instantiate(turret.bulletPrefab, turret.bulletSpawnPoint.position, turret.bulletSpawnPoint.rotation);
 

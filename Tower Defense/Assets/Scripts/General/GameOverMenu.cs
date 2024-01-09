@@ -10,7 +10,7 @@ public class GameOverMenu : MonoBehaviour
     public readonly string homeSceneName = "MainMenu";
     private void OnEnable()
     {
-        roundsText.text = playerStats.Round.ToString();
+        roundsText.text = playerStats.CurrentRound.ToString();
         Time.timeScale = 0f;
     }
 
