@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
@@ -5,6 +6,8 @@ public class SelectionManager : MonoBehaviour
     public static SelectionManager Instance { get; private set; }
 
     public SelectedNodeUI nodeUI;
+
+    public Shop shop;
 
     private TurretBlueprint turretToBuild;
     public TurretBlueprint TurretToBuild
@@ -20,6 +23,7 @@ public class SelectionManager : MonoBehaviour
         set
         {
             turretToBuild = value;
+            // Deselect node when player select a tower on shop
             DeselectNode();
         }
     }
@@ -32,6 +36,7 @@ public class SelectionManager : MonoBehaviour
 
             if (selectedNode == value)
             {
+                // Deselect node when player clicks on node again
                 DeselectNode();
                 return;
             }
@@ -54,9 +59,20 @@ public class SelectionManager : MonoBehaviour
         Instance = this;
         
     }
+
+    public void SelectTurret(string turretName)
+    {
+        Debug.Log(turretName + " was selected to build");
+        TurretBlueprint turretSelected = Array.Find(shop.turretsToSelect, turret => turret.name == turretName);
+        TurretToBuild = turretSelected;
+        shop.SetTowerName(turretSelected.name);
+    }
+
+
     public void DeselectNode()
     {
         selectedNode = null;
         nodeUI.Hide();
+        shop.ResetTowerName();
     }
 }

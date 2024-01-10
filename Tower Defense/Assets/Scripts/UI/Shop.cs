@@ -1,23 +1,27 @@
-using System;
+using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public TextMeshProUGUI selectedTowerName;
 
+    [Header("Shop items")]
     public TurretBlueprint[] turretsToSelect;
-
-    SelectionManager selectionManager;
 
     private void Start()
     {
-        selectionManager = SelectionManager.Instance;
+        ResetTowerName();
     }
 
-    public void SelectTurret(string turretName)
+    public void SetTowerName(string towerName)
     {
-        Debug.Log(turretName + " was selected to build");
-        TurretBlueprint turretSelected = Array.Find(turretsToSelect, turret => turret.name == turretName);
-        selectionManager.TurretToBuild = turretSelected;
+        selectedTowerName.text = towerName;
+        selectedTowerName.color = new Color(1, 1, 1, 1);
     }
 
+    public void ResetTowerName()
+    {
+        selectedTowerName.text = "Select a tower";
+        selectedTowerName.color = new Color(1, 1, 1, 0.3f);
+    }
 }
