@@ -2579,7 +2579,7 @@ PrefabInstance:
     - target: {fileID: 311140065220602709, guid: 90145038481b03846af36d79311233cf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 311140065220602709, guid: 90145038481b03846af36d79311233cf,
         type: 3}
@@ -4240,6 +4240,7 @@ RectTransform:
   m_Children:
   - {fileID: 787947723}
   - {fileID: 1114442486}
+  - {fileID: 1378576691}
   m_Father: {fileID: 474910641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5718,6 +5719,13 @@ MonoBehaviour:
     name: Another
     cost: 150
     upgradedPrefab: {fileID: 7297314312622550668, guid: 201b8b105be6d14489576879279222cf,
+      type: 3}
+    upgradeCost: 50
+  - prefab: {fileID: 7297314312622550668, guid: d7fb3276100b1104fae1dfc722cc9c0a,
+      type: 3}
+    name: Cactus
+    cost: 120
+    upgradedPrefab: {fileID: 7297314312622550668, guid: bc421c06c45e0a0408091b4f614b9b59,
       type: 3}
     upgradeCost: 50
 --- !u!1001 &483439756
@@ -11677,6 +11685,156 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1064258270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1067435276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 388054222}
+    m_Modifications:
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516853956511143701, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_text
+      value: '
+
+        Cactus Tower'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558824702973190048, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_Name
+      value: Cactus Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343207190590004130, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_text
+      value: $ 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 474910644}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Cactus
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd23bc94d484b6547871b0bceeabe2ea, type: 3}
 --- !u!1001 &1071415954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12647,7 +12805,7 @@ PrefabInstance:
     - target: {fileID: 7343207190590004130, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
       propertyPath: m_text
-      value: $ 250
+      value: $ 150
       objectReference: {fileID: 0}
     - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
@@ -16090,6 +16248,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 569957465227787863, guid: 70c23be8ea9ca9e48813344694adc118,
     type: 3}
   m_PrefabInstance: {fileID: 1369685823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1378576691 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1011831561820459661, guid: dd23bc94d484b6547871b0bceeabe2ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1067435276}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1394602280
 PrefabInstance:
@@ -24577,12 +24741,6 @@ PrefabInstance:
 
         Standard Turret'
       objectReference: {fileID: 0}
-    - target: {fileID: 3516853956511143701, guid: dd23bc94d484b6547871b0bceeabe2ea,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -8532127650671059479, guid: 8484b8741f65c624c8b95a86b43ae885,
-        type: 2}
     - target: {fileID: 4558824702973190048, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
       propertyPath: m_Name
@@ -24591,7 +24749,7 @@ PrefabInstance:
     - target: {fileID: 7343207190590004130, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}
       propertyPath: m_text
-      value: $ 100
+      value: $ 50
       objectReference: {fileID: 0}
     - target: {fileID: 7898050035078632774, guid: dd23bc94d484b6547871b0bceeabe2ea,
         type: 3}

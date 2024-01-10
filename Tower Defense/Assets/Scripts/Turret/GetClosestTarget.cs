@@ -7,7 +7,7 @@ public class GetClosestTarget : MonoBehaviour
     void Start()
     {
         turret = GetComponent<Turret>();
-        InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
+        InvokeRepeating(nameof(UpdateTarget), 0f, 0.3f);
     }
     
     private void UpdateTarget()
@@ -28,7 +28,7 @@ public class GetClosestTarget : MonoBehaviour
             }
         }
 
-        if (closestEnemy != null && shortestDistance <= turret.range)
+        if (closestEnemy != null && shortestDistance <= turret.currentRange)
         {
             turret.target = closestEnemy.transform;
         } else
@@ -44,7 +44,7 @@ public class GetClosestTarget : MonoBehaviour
         float radius;
         if (turret != null)
         {
-            radius = turret.range;
+            radius = turret.currentRange;
         } else
         {
             radius = 15f;

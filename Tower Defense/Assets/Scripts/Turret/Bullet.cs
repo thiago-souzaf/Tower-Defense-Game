@@ -3,14 +3,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private const string EnemyTag = "Enemy";
-    private Transform target;
+
     private Vector3 shootingDir;
 
     private Vector3 initPos;
 
     public float bulletSpeed = 10f;
 
-    public float maxRange = 20f;
+    public float maxRange;
 
     public int bulletDamage = 5;
 
@@ -20,11 +20,10 @@ public class Bullet : MonoBehaviour
         initPos = transform.position;
     }
 
-    public void Seek(Transform _target)
+    public void SetDirection(Vector3 dir, float range)
     {
-        target = _target;
-        shootingDir = target.position - transform.position;
-        shootingDir.Normalize();
+        shootingDir = dir.normalized;
+        maxRange = range * 1.25f;
     }
 
     void Update()

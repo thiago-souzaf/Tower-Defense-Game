@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 [RequireComponent (typeof(Turret))]
 public class Shooting : MonoBehaviour
@@ -18,19 +19,20 @@ public class Shooting : MonoBehaviour
     {
         if (turret.target != null && Time.time >= nextTimeToShoot)
         {
-            nextTimeToShoot = Time.time + 1f/turret.fireRate;
-            Shoot();
+            nextTimeToShoot = Time.time + 1f/turret.currentFireRate;
+            StartCoroutine(Shoot());
         }
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
-
+        turret.towerAnimator.SetTrigger("shoot");
+        yield return new WaitForSeconds(turret.animationTimeToShoot); // Time until the animation is on correct position to shoot
         GameObject bulletGO = Instantiate(turret.bulletPrefab, turret.bulletSpawnPoint.position, turret.bulletSpawnPoint.rotation);
 
         if(bulletGO.TryGetComponent(out Bullet bullet))
         {
-            bullet.Seek(turret.target);
+            bullet.SetDirection(turret.bulletSpawnPoint.forward, turret.currentRange);
         }
     }
 }
