@@ -86,12 +86,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   startRange: 15
-  range: 0
+  currentRange: 0
   enemyTag: Enemy
   startFireRate: 3
-  fireRate: 0
+  currentFireRate: 0
   animationTimeToShoot: 0.167
-  bulletPrefab: {fileID: 8376681165471850897, guid: aaf4704cb1673104e87db613e2ca2173,
+  bulletPrefab: {fileID: 8376681165471850897, guid: e73a3601eb0971f4ea9e951efb657f5b,
     type: 3}
   bulletSpawnPoint: {fileID: 2274330102338987952}
   partToRotate: {fileID: 5536465440686743651}

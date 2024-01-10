@@ -91,7 +91,7 @@ MonoBehaviour:
   startFireRate: 1
   currentFireRate: 0
   animationTimeToShoot: 0.167
-  bulletPrefab: {fileID: 8376681165471850897, guid: aaf4704cb1673104e87db613e2ca2173,
+  bulletPrefab: {fileID: 8376681165471850897, guid: 2355bea657806a948a115bfc9a944496,
     type: 3}
   bulletSpawnPoint: {fileID: 2274330102338987952}
   partToRotate: {fileID: 377745691813134826}

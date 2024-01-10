@@ -8,10 +8,9 @@ public class Bullet : MonoBehaviour
 
     private Vector3 initPos;
 
+    private float maxRange;
+
     public float bulletSpeed = 10f;
-
-    public float maxRange;
-
     public int bulletDamage = 5;
 
 
