@@ -35,12 +35,12 @@ public class UIManager : MonoBehaviour
 
     public void UpdateMoney(int currentMoney)
     {
-        moneyTxt.text = "M $" + currentMoney;
+        moneyTxt.text = "$" + currentMoney;
     }
 
     public void UpdateLives(int currentLives)
     {
-        livesTxt.text = "L " + currentLives;
+        livesTxt.text = currentLives.ToString();
     }
     #endregion
 
