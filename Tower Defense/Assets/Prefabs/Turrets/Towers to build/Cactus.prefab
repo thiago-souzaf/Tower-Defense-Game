@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646a9dca35533f647b798a2aed6d4cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partToRotate: {fileID: 377745691813134826}
 --- !u!114 &4980398166996904181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +73,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c2ba5caa1b81a48a229d674f9f2cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacker: 1
+  fireRate: 1
+  animationTimeToShoot: 0.167
+  bulletPrefab: {fileID: 8376681165471850897, guid: 2355bea657806a948a115bfc9a944496,
+    type: 3}
+  bulletSpawnPoint: {fileID: 2274330102338987952}
 --- !u!114 &4225553833101387601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,16 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  startRange: 10
-  currentRange: 0
+  range: 15
   enemyTag: Enemy
-  startFireRate: 1
-  currentFireRate: 0
-  animationTimeToShoot: 0.167
-  bulletPrefab: {fileID: 8376681165471850897, guid: 2355bea657806a948a115bfc9a944496,
-    type: 3}
-  bulletSpawnPoint: {fileID: 2274330102338987952}
-  partToRotate: {fileID: 377745691813134826}
   towerAnimator: {fileID: 194988259038383905}
   info:
     prefab: {fileID: 0}

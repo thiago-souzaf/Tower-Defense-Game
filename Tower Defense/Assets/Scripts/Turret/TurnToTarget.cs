@@ -3,13 +3,14 @@ using UnityEngine;
 [RequireComponent (typeof(Turret))]
 public class TurnToTarget : MonoBehaviour
 {
+    public Transform partToRotate;
+
     private Turret turret;
 
     // Start is called before the first frame update
     void Start()
     {
         turret = GetComponent<Turret>();
-
     }
 
     // Update is called once per frame
@@ -17,9 +18,8 @@ public class TurnToTarget : MonoBehaviour
     {
         if (turret.target != null)
         {
-            Vector3 lookPoint = new(turret.target.position.x, turret.partToRotate.position.y, turret.target.position.z);
-            turret.partToRotate.LookAt(lookPoint);
+            Vector3 lookPoint = new(turret.target.position.x, partToRotate.position.y, turret.target.position.z);
+            partToRotate.LookAt(lookPoint);
         }
-        
     }
 }

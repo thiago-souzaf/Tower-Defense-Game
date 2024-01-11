@@ -4239,6 +4239,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1011831562398439297}
+  - {fileID: 1695929450}
   m_Father: {fileID: 474910641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5707,27 +5708,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedTowerName: {fileID: 2017718933}
   turretsToSelect:
-  - prefab: {fileID: 7297314312622550668, guid: e94c7fe0d6e076b44b275340f8c35d25,
-      type: 3}
-    name: Standard
-    cost: 50
-    upgradedPrefab: {fileID: 7297314312622550668, guid: 201b8b105be6d14489576879279222cf,
-      type: 3}
-    upgradeCost: 100
-  - prefab: {fileID: 5175868409848924451, guid: 0c65221b53a17ec4289f258200c33724,
-      type: 3}
-    name: Another
-    cost: 150
-    upgradedPrefab: {fileID: 7297314312622550668, guid: 201b8b105be6d14489576879279222cf,
-      type: 3}
-    upgradeCost: 50
   - prefab: {fileID: 7297314312622550668, guid: d7fb3276100b1104fae1dfc722cc9c0a,
       type: 3}
     name: Cactus
     cost: 120
     upgradedPrefab: {fileID: 7297314312622550668, guid: bc421c06c45e0a0408091b4f614b9b59,
       type: 3}
-    upgradeCost: 50
+    upgradeCost: 300
+  - prefab: {fileID: 2934518694468055488, guid: 78abee8e0e61e4547b7b2097bb18aa33,
+      type: 3}
+    name: Mushroom
+    cost: 150
+    upgradedPrefab: {fileID: 2934518694468055488, guid: c393a2cba5fe5d94a94ca2fb2f81a85d,
+      type: 3}
+    upgradeCost: 250
 --- !u!1 &478176837
 GameObject:
   m_ObjectHideFlags: 0
@@ -7445,7 +7439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639866778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2d401fe798b4cc4ca5c97f93278bd09, type: 3}
   m_Name: 
@@ -19315,6 +19309,176 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 569957465227787863, guid: 70c23be8ea9ca9e48813344694adc118,
     type: 3}
   m_PrefabInstance: {fileID: 1687454435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1695929449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 388054222}
+    m_Modifications:
+    - target: {fileID: 936648210457053094, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 639866781}
+    - target: {fileID: 936648210457053094, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 936648210457053094, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SelectionManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 936648210457053094, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241385179344057990, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_Name
+      value: Mushroom Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310429312921110007, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_text
+      value: $ 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664120595901997606, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a739e4b8225de7348ad8b04540a198ff,
+        type: 3}
+    - target: {fileID: 8896169874903977990, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 13.7987
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896169874903977990, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000020027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896169874903977990, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10.9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ce26c0f14cb5c64a861c144b19f7c19, type: 3}
+--- !u!224 &1695929450 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3507788575363161666, guid: 4ce26c0f14cb5c64a861c144b19f7c19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695929449}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1718519604
 PrefabInstance:

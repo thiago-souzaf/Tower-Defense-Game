@@ -3,6 +3,15 @@ using UnityEngine;
 [RequireComponent (typeof(Turret))]
 public class Shooting : MonoBehaviour
 {
+    public bool isAttacker;
+
+    public float fireRate = 1f;
+    [Tooltip("Seconds until the animation is on correct position to shoot")]
+    [Range(0f, 1f)]
+    public float animationTimeToShoot = 0.167f;
+
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnPoint;
 
     private Turret turret;
 
@@ -12,14 +21,15 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         turret = GetComponent<Turret>();
+        nextTimeToShoot = Time.time + 1f / fireRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (turret.target != null && Time.time >= nextTimeToShoot)
+        if ((turret.target != null || !isAttacker) && Time.time >= nextTimeToShoot)
         {
-            nextTimeToShoot = Time.time + 1f/turret.currentFireRate;
+            nextTimeToShoot = Time.time + 1f/fireRate;
             StartCoroutine(Shoot());
         }
     }
@@ -27,12 +37,12 @@ public class Shooting : MonoBehaviour
     IEnumerator Shoot()
     {
         turret.towerAnimator.SetTrigger("shoot");
-        yield return new WaitForSeconds(turret.animationTimeToShoot); // Time until the animation is on correct position to shoot
-        GameObject bulletGO = Instantiate(turret.bulletPrefab, turret.bulletSpawnPoint.position, turret.bulletSpawnPoint.rotation);
+        yield return new WaitForSeconds(animationTimeToShoot); // Time until the animation is on correct position to shoot
+        GameObject bulletGO = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         if(bulletGO.TryGetComponent(out Bullet bullet))
         {
-            bullet.SetDirection(turret.bulletSpawnPoint.forward, turret.currentRange);
+            bullet.SetDirection(bulletSpawnPoint.forward, turret.range);
         }
     }
 }

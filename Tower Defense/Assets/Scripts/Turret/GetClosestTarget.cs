@@ -28,7 +28,7 @@ public class GetClosestTarget : MonoBehaviour
             }
         }
 
-        if (closestEnemy != null && shortestDistance <= turret.currentRange)
+        if (closestEnemy != null && shortestDistance <= turret.range)
         {
             turret.target = closestEnemy.transform;
         } else
@@ -44,7 +44,7 @@ public class GetClosestTarget : MonoBehaviour
         float radius;
         if (turret != null)
         {
-            radius = turret.currentRange;
+            radius = turret.range;
         } else
         {
             radius = 15f;
