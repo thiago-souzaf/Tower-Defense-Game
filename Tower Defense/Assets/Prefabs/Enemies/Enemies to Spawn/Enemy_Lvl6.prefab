@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16547d86f86dbd40a32bd36e1d78480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHealth: 10
+  fullHealth: 20
   <Health>k__BackingField: 0
   value: 50
   healthBar: {fileID: 723362291539347901}

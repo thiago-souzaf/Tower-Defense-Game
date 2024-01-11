@@ -44,8 +44,12 @@ public class EnemySpawner : MonoBehaviour
         waveIndex = 0;
         amountOfWaves = waves.Length;
         playerStats.lastRound = amountOfWaves;
-        StartCoroutine(SpawnWave());
 
+    }
+
+    public void StartWaves()
+    {
+        StartCoroutine(SpawnWave());
     }
 
     IEnumerator SpawnWave()
@@ -53,8 +57,6 @@ public class EnemySpawner : MonoBehaviour
 
         if (waveIndex >= waves.Length)
         {
-            // Waves finished
-            // TODO: implement "level complete" screen
             manager.WinLevel();
             this.enabled = false;
             yield break;

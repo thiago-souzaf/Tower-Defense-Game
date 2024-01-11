@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacker: 1
-  fireRate: 3
+  fireRate: 2
   animationTimeToShoot: 0.167
   bulletPrefab: {fileID: 8376681165471850897, guid: e73a3601eb0971f4ea9e951efb657f5b,
     type: 3}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 15
+  range: 13
   enemyTag: Enemy
   towerAnimator: {fileID: 5431271337189584552}
   info:

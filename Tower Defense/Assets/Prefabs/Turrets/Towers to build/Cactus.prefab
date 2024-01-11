@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 15
+  range: 11
   enemyTag: Enemy
   towerAnimator: {fileID: 194988259038383905}
   info:

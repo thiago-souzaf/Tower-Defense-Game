@@ -55,5 +55,6 @@ public class PlayerStats : MonoBehaviour
     {
         Money = startMoney;
         Lives = startLives;
+        CurrentRound = 0;
     }
 }

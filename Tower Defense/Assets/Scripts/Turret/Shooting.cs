@@ -21,12 +21,16 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         turret = GetComponent<Turret>();
-        nextTimeToShoot = Time.time + 1f / fireRate;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.hasGameStarted)
+        {
+            nextTimeToShoot = Time.time + 1f / fireRate;
+            return;
+        }
         if ((turret.target != null || !isAttacker) && Time.time >= nextTimeToShoot)
         {
             nextTimeToShoot = Time.time + 1f/fireRate;

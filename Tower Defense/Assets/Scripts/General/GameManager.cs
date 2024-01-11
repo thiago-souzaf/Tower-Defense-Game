@@ -6,11 +6,15 @@ public class GameManager : MonoBehaviour
 
     public static bool isGameOver;
 
+    public static bool hasGameStarted;
+
     public int levelToUnlock;
 
     public UnityEvent OnGameOver;
 
     public UnityEvent OnLevelComplete;
+
+    public UnityEvent OnGameStart;
 
     private void Start()
     {
@@ -28,5 +32,12 @@ public class GameManager : MonoBehaviour
         OnLevelComplete.Invoke();
         Debug.Log("Level Finished");
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
+    }
+
+    public void StartGame()
+    {
+        hasGameStarted = true;
+        OnGameStart.Invoke();
+        Debug.Log("Game has started");
     }
 }
