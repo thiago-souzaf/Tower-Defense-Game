@@ -57,4 +57,9 @@ public class PlayerStats : MonoBehaviour
         Lives = startLives;
         CurrentRound = 0;
     }
+
+    public void IncrementMoney(int amountToIncrement)
+    {
+        Money += amountToIncrement;
+    }
 }

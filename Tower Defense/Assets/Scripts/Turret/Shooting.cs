@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.hasGameStarted)
+        if (!GameManager.isWaveOn)
         {
             nextTimeToShoot = Time.time + 1f / fireRate;
             return;

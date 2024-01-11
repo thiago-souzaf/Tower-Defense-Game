@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     public static bool isGameOver;
 
-    public static bool hasGameStarted;
+    public static bool isWaveOn;
 
     public int levelToUnlock;
 
@@ -36,8 +36,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        hasGameStarted = true;
+        isWaveOn = true;
         OnGameStart.Invoke();
         Debug.Log("Game has started");
     }
+
+    // TODO: Add a functionality to speed up the game
+
+    // TODO: Let the player choose between auto start every new round or wait for player to press start;
+
+    // TODO: Camera movement - change rotation when it goes down
 }

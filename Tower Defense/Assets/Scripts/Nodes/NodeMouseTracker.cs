@@ -34,8 +34,6 @@ public class NodeMouseTracker : MonoBehaviour
         }
         if (!selectionManager.HasTurretSelected) // If the user hasn't selected a turret from the shop
         {
-            // TODO: display message on UI
-            Debug.Log("Select a turret");
             return;
         }
         nodeBuilder.BuildTurret(selectionManager.TurretToBuild);

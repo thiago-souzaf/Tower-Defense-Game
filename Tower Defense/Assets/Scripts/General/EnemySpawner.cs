@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
+
+    public UnityEvent OnWaveComplete;
     private int enemiesAlive;
     public int EnemiesAlive
     {
@@ -10,9 +13,16 @@ public class EnemySpawner : MonoBehaviour
         set
         {
             enemiesAlive = value;
-            if (enemiesAlive <= 0 && hasSpawnedAll)
+            if (enemiesAlive <= 0 && hasSpawnedAll) // if wave completed
             {
-                StartCoroutine(SpawnWave());
+                if (waveIndex >= waves.Length) // if level completed
+                {
+                    manager.WinLevel();
+                    this.enabled = false;
+                }
+                OnWaveComplete.Invoke();
+                GameManager.isWaveOn = false;
+                playerStats.IncrementMoney(100 + waveIndex);
             }
         }
     }
@@ -47,20 +57,13 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    public void StartWaves()
+    public void StartWave()
     {
         StartCoroutine(SpawnWave());
     }
 
     IEnumerator SpawnWave()
     {
-
-        if (waveIndex >= waves.Length)
-        {
-            manager.WinLevel();
-            this.enabled = false;
-            yield break;
-        }
 
         Wave curretWave = waves[waveIndex];
         hasSpawnedAll = false;
