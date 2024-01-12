@@ -32,4 +32,7 @@ Earn currency by defeating enemies. Use it to upgrade existing towers or deploy 
 - **Winning:** Survive all waves to emerge victorious.
 - **Losing:** If your health reaches zero, the game is lost.
 
-
+## Screenshots
+![image screenshot](Tower%20Defense/Screenshots/Screenshot_6.jpg)
+![image screenshot](Tower%20Defense/Screenshots/Screenshot_7.jpg)
+![image screenshot](Tower%20Defense/Screenshots/Screenshot_9.jpg)
