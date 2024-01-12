@@ -60,12 +60,11 @@ public class SelectionManager : MonoBehaviour
         
     }
 
-    public void SelectTurret(string turretName)
+    public void SelectTurret(TurretBlueprint turretBlueprintToBuild)
     {
-        Debug.Log(turretName + " was selected to build");
-        TurretBlueprint turretSelected = Array.Find(shop.turretsToSelect, turret => turret.name == turretName);
-        TurretToBuild = turretSelected;
-        shop.SetTowerName(turretSelected.name);
+        Debug.Log(turretBlueprintToBuild.name + " was selected to build");
+        TurretToBuild = turretBlueprintToBuild;
+        shop.SetTowerName(turretBlueprintToBuild.name);
     }
 
 
