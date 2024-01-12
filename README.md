@@ -1,6 +1,8 @@
 # Tower Defense Game
- 
+
 Welcome to my Tower Defense Game project! A game made with Unity 3D featuring engaging tower defense gameplay and a colorful low-poly visual style.
+
+Although still a work in progress, I'm excited to share the development journey and showcase my skills in game development.
 
 ## Gameplay
 The main gameplay is to stop enemy monsters from reaching the exit by making a defense consisting of various towers. Defeating enemies will earn money, and can be used to buy more towers or upgrade existing towers.
@@ -36,3 +38,6 @@ Earn currency by defeating enemies. Use it to upgrade existing towers or deploy 
 ![image screenshot](Tower%20Defense/Screenshots/Screenshot_6.jpg)
 ![image screenshot](Tower%20Defense/Screenshots/Screenshot_7.jpg)
 ![image screenshot](Tower%20Defense/Screenshots/Screenshot_9.jpg)
+
+## License
+This project is licensed under the Apache-2.0 license - see the [LICENSE](LICENSE) file for details.
