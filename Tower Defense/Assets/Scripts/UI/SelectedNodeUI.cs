@@ -6,7 +6,7 @@ public class SelectedNodeUI : MonoBehaviour
 {
     public GameObject ui;
     public TextMeshProUGUI turretName;
-
+    public Image towerImage;
     public TextMeshProUGUI upgradeCost;
     public Button upgradeButton;
 
@@ -20,9 +20,12 @@ public class SelectedNodeUI : MonoBehaviour
         {
             selectedNode = value;
             ui.SetActive(true);
-            turretName.text = GetTurretName(selectedNode);
-            SetUpgradePrice(selectedNode.isUpgraded);
-            SetSellCost(selectedNode);
+
+            // Set info on UI
+            SetTurretName(selectedNode);
+            SetTurretImage(selectedNode);
+            SetUpgradePrice(selectedNode);
+            SetSellPrice(selectedNode);
         }
     }
 
@@ -31,18 +34,24 @@ public class SelectedNodeUI : MonoBehaviour
         ui.SetActive(false);
     }
 
-    private string GetTurretName(NodeBuilder node)
+    private void SetTurretName(NodeBuilder node)
     {
-        if (node.turret.TryGetComponent(out Turret turretStats))
+        if (node.turretBlueprint != null)
         {
-            return turretStats.info.name;
+            turretName.text = node.turretBlueprint.name;
+            return;
         }
-        return "[name not found]";
+        turretName.text = "[name not found]";
     }
 
-    private void SetUpgradePrice(bool isUpgraded)
+    private void SetTurretImage(NodeBuilder node)
     {
-        if (isUpgraded)
+        towerImage.sprite = node.turretBlueprint.imageSprite;
+    }
+
+    private void SetUpgradePrice(NodeBuilder node)
+    {
+        if (node.isUpgraded)
         {
             upgradeCost.text = "MAX";
             upgradeButton.interactable = false;
@@ -54,9 +63,9 @@ public class SelectedNodeUI : MonoBehaviour
         }
     }
 
-    private void SetSellCost(NodeBuilder node)
+    private void SetSellPrice(NodeBuilder node)
     {
-        sellCost.text = "$ " + node.turretBlueprint.SellAmount;
+        sellCost.text = "$ " + node.turretBlueprint.SellPrice;
     }
 
     public void Upgrade()
@@ -64,7 +73,7 @@ public class SelectedNodeUI : MonoBehaviour
         if (selectedNode != null)
         {
             selectedNode.UpgradeTurret();
-            SelectionManager.Instance.DeselectNode();
+            SetUpgradePrice(selectedNode);
         }
     }
 

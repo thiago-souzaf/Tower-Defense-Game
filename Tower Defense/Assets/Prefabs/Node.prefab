@@ -121,9 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 0}
   turretBlueprint:
-    prefab: {fileID: 0}
     name: 
-    cost: 0
+    imageSprite: {fileID: 0}
+    prefab: {fileID: 0}
+    buildCost: 0
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
   isUpgraded: 0
@@ -145,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c487fddc68ec84a40b2384451fde7254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.22677112, g: 0.9811321, b: 0.23739597, a: 1}
+  hoverEmptyNodeColor: {r: 0.24313726, g: 0.9372549, b: 0.5176471, a: 1}
+  hoverBuiltNodeColor: {r: 0.9245283, g: 0.7373205, b: 0.25729796, a: 0}

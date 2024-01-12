@@ -11,7 +11,4 @@ public class Turret : MonoBehaviour
     [Header("Animate tower body")]
     public Animator towerAnimator;
 
-    [HideInInspector]
-    public TurretBlueprint info;
-
 }

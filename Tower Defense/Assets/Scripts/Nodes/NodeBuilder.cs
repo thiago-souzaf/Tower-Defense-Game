@@ -19,7 +19,6 @@ public class NodeBuilder : MonoBehaviour
     public GameObject upgradeEffect;
     public GameObject sellEffect;
 
-
     private void Start()
     {
         playerStats = SelectionManager.Instance.GetComponent<PlayerStats>();
@@ -27,15 +26,14 @@ public class NodeBuilder : MonoBehaviour
 
     public void BuildTurret(TurretBlueprint blueprint)
     {
-        if (playerStats.Money < blueprint.cost)
+        if (playerStats.Money < blueprint.buildCost)
         {
             Debug.Log("Not enough money");
             return;
         }
-        playerStats.Money -= blueprint.cost;
+        playerStats.Money -= blueprint.buildCost;
 
         GameObject _turret = Instantiate(blueprint.prefab, PositionToBuild, Quaternion.identity);
-        _turret.GetComponent<Turret>().info = blueprint;
         this.turret = _turret;
 
         // Visual Effects
@@ -43,7 +41,6 @@ public class NodeBuilder : MonoBehaviour
         Destroy(buildEffectGO, 2f);
 
         turretBlueprint = blueprint;
-
     }
 
     public void UpgradeTurret()
@@ -60,7 +57,6 @@ public class NodeBuilder : MonoBehaviour
 
         // Build a new turret
         GameObject _turret = Instantiate(turretBlueprint.upgradedPrefab, PositionToBuild, Quaternion.identity);
-        _turret.GetComponent<Turret>().info = turretBlueprint;
         this.turret = _turret;
 
         // Visual Effects
@@ -72,7 +68,7 @@ public class NodeBuilder : MonoBehaviour
 
     public void SellTurret()
     {
-        playerStats.Money += turretBlueprint.SellAmount;
+        playerStats.Money += turretBlueprint.SellPrice;
 
         DeleteTurret();
     }

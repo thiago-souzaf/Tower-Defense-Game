@@ -3240,6 +3240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 651854369}
   turretName: {fileID: 1112363661}
+  towerImage: {fileID: 1395833255}
   upgradeCost: {fileID: 1341396823}
   upgradeButton: {fileID: 252605591}
   sellCost: {fileID: 1193684347}
@@ -6575,17 +6576,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedTowerName: {fileID: 2017718933}
   turretsToSelect:
-  - prefab: {fileID: 7297314312622550668, guid: d7fb3276100b1104fae1dfc722cc9c0a,
+  - name: Cactus
+    imageSprite: {fileID: 21300000, guid: fedf36cc8054a04418f7c003d74cb181, type: 3}
+    prefab: {fileID: 7297314312622550668, guid: d7fb3276100b1104fae1dfc722cc9c0a,
       type: 3}
-    name: Cactus
-    cost: 120
+    buildCost: 120
     upgradedPrefab: {fileID: 7297314312622550668, guid: bc421c06c45e0a0408091b4f614b9b59,
       type: 3}
     upgradeCost: 300
-  - prefab: {fileID: 2934518694468055488, guid: 78abee8e0e61e4547b7b2097bb18aa33,
+  - name: Mushroom
+    imageSprite: {fileID: 21300000, guid: a739e4b8225de7348ad8b04540a198ff, type: 3}
+    prefab: {fileID: 2934518694468055488, guid: 78abee8e0e61e4547b7b2097bb18aa33,
       type: 3}
-    name: Mushroom
-    cost: 150
+    buildCost: 150
     upgradedPrefab: {fileID: 2934518694468055488, guid: c393a2cba5fe5d94a94ca2fb2f81a85d,
       type: 3}
     upgradeCost: 250
@@ -8619,8 +8622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9f5594f1a97b44bb063c7dfa49e7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 200
-  startLives: 1
+  startMoney: 2000
+  startLives: 10
   lastRound: 0
 --- !u!114 &639866784
 MonoBehaviour:
@@ -15234,7 +15237,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     m_PressedColor: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -18568,7 +18571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395833252}
   - component: {fileID: 1395833254}
-  - component: {fileID: 1395833253}
+  - component: {fileID: 1395833255}
   m_Layer: 5
   m_Name: Turret Image
   m_TagString: Untagged
@@ -18592,10 +18595,18 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -96.9}
-  m_SizeDelta: {x: -60, y: 99}
+  m_AnchoredPosition: {x: 0, y: -99.174}
+  m_SizeDelta: {x: -60, y: 105.142}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1395833253
+--- !u!222 &1395833254
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395833251}
+  m_CullTransparentMesh: 1
+--- !u!114 &1395833255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18604,7 +18615,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395833251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -18615,21 +18626,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1395833254
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395833251}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 21300000, guid: a739e4b8225de7348ad8b04540a198ff, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!4 &1396281474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 148531072058344352, guid: 578cf6e74f9e4ee4e9779ad404f7a5a0,

@@ -3,12 +3,18 @@ using UnityEngine;
 [System.Serializable]
 public class TurretBlueprint
 {
-    public GameObject prefab;
+    [Header("Tower info")]
     public string name;
-    public int cost;
+    public Sprite imageSprite;
 
+    [Header("Basic version")]
+    public GameObject prefab;
+    public int buildCost;
+
+    [Header("Upgraded version")]
     public GameObject upgradedPrefab;
     public int upgradeCost;
 
-    public int SellAmount { get { return cost / 2; } }
+    // Sell price
+    public int SellPrice { get { return buildCost / 2; } }
 }

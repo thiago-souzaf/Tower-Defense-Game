@@ -4,7 +4,8 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(NodeBuilder))]
 public class NodeMouseTracker : MonoBehaviour
 {
-    [SerializeField] private Color hoverColor;
+    [SerializeField] private Color hoverEmptyNodeColor;
+    [SerializeField] private Color hoverBuiltNodeColor;
     private Renderer rend;
     private Color startColor;
 
@@ -46,11 +47,16 @@ public class NodeMouseTracker : MonoBehaviour
         {
             return;
         }
-        if (!selectionManager.HasTurretSelected)
+        if (nodeBuilder.turret != null)
         {
+            rend.material.color = hoverBuiltNodeColor;
             return;
         }
-        rend.material.color = hoverColor;
+        if (selectionManager.HasTurretSelected)
+        {
+            rend.material.color = hoverEmptyNodeColor;
+            return;
+        }
     }
 
     private void OnMouseExit()

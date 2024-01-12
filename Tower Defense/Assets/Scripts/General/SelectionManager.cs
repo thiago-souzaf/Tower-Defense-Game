@@ -42,7 +42,7 @@ public class SelectionManager : MonoBehaviour
             }
             selectedNode = value;
             turretToBuild = null;
-
+            shop.ResetTowerName();
             nodeUI.SelectedNode = selectedNode;
         }
     }
@@ -73,6 +73,6 @@ public class SelectionManager : MonoBehaviour
     {
         selectedNode = null;
         nodeUI.Hide();
-        shop.ResetTowerName();
+        
     }
 }
