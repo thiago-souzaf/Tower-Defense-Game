@@ -19,9 +19,17 @@ public class EnemySpawner : MonoBehaviour
                 {
                     manager.WinLevel();
                     this.enabled = false;
+                    return;
                 }
-                OnWaveComplete.Invoke();
-                GameManager.isWaveOn = false;
+
+                if (GameManager.autoStart)
+                {
+                    StartWave();
+                } else
+                {
+                    OnWaveComplete.Invoke();
+                    GameManager.isWaveOn = false;
+                }
                 playerStats.IncrementMoney(100 + waveIndex);
             }
         }

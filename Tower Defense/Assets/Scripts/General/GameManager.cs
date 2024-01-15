@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public static bool isWaveOn;
 
+    public static bool autoStart;
+
     public int levelToUnlock;
 
     public UnityEvent OnGameOver;
@@ -16,9 +18,13 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent OnGameStart;
 
+    private bool isGameFast;
+
     private void Start()
     {
         isGameOver = false;
+        autoStart = false;
+        isGameFast = Time.timeScale > 1.5f;
     }
     public void EndGame()
     {
@@ -41,11 +47,19 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game has started");
     }
 
-    // TODO: Add a functionality to speed up the game
-    // TODO: Let the player choose between auto start every new round or wait for player to press start
-    // TODO: Camera movement - change rotation when it goes down
+    public void SetAutoStart(bool value)
+    {
+        autoStart = value;
+    }
+
+    public void ToggleGameTimeScale()
+    {
+        Time.timeScale = isGameFast ? 1 : 2;
+        isGameFast = !isGameFast;
+    }
+
     // TODO: Show tower range - before building it and when selecting it
     // TODO: Display enemies path direction before game start
 
-    
+    // TODO: Make the turtle regenerate life after a certain amount of time
 }

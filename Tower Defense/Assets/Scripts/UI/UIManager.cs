@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     [Header("Scene Transition")]
     public string homeSceneName = "MainMenu";
     public SceneFader sceneFader;
+
+    private float normalTime;
     private void Start()
     {
         gameOverMenuUI.SetActive(false);
@@ -87,7 +89,7 @@ public class UIManager : MonoBehaviour
 
     public void Home()
     {
-        StopTime(false);
+        Time.timeScale = 1.0f;
         sceneFader.FadeTo(homeSceneName);
     }
 
@@ -99,6 +101,14 @@ public class UIManager : MonoBehaviour
 
     private void StopTime(bool stop)
     {
-        Time.timeScale = stop ? 0f : 1f;
+        if (stop)
+        {
+            normalTime = Time.timeScale;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = normalTime;
+        }
     }
 }
