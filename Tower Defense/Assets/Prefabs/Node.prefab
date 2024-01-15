@@ -130,9 +130,9 @@ MonoBehaviour:
   isUpgraded: 0
   buildEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
     type: 3}
-  upgradeEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
+  upgradeEffect: {fileID: 4979084923548189538, guid: 3efc731579a36d2469b477f85ef43dea,
     type: 3}
-  sellEffect: {fileID: 1896296823637679113, guid: 142d6258890f54f499006a1b10d32fc0,
+  sellEffect: {fileID: 3303503813383969749, guid: b5fc7e0e0568e3942924a4d6c557bab6,
     type: 3}
 --- !u!114 &2350525101659668562
 MonoBehaviour:

@@ -41,7 +41,7 @@ public class Shop : MonoBehaviour
         _btn.GetComponent<Button>().onClick.AddListener(() => SelectionManager.Instance.SelectTurret(turretInfo));
 
         // Sets button image with turret sprite
-        _btn.GetComponentsInChildren<Image>()[1].sprite = turretInfo.imageSprite;
+        _btn.GetComponentsInChildren<Image>()[1].sprite = turretInfo.normalTowerImage;
 
         // Sets turret price
         _btn.GetComponentInChildren<TextMeshProUGUI>().text = "$ " + turretInfo.buildCost;

@@ -46,7 +46,14 @@ public class SelectedNodeUI : MonoBehaviour
 
     private void SetTurretImage(NodeBuilder node)
     {
-        towerImage.sprite = node.turretBlueprint.imageSprite;
+        if (!node.isUpgraded)
+        {
+            towerImage.sprite = node.turretBlueprint.normalTowerImage;
+        }
+        else
+        {
+            towerImage.sprite = node.turretBlueprint.upgradedTowerImage;
+        }
     }
 
     private void SetUpgradePrice(NodeBuilder node)
@@ -74,6 +81,7 @@ public class SelectedNodeUI : MonoBehaviour
         {
             selectedNode.UpgradeTurret();
             SetUpgradePrice(selectedNode);
+            SetTurretImage(selectedNode);
         }
     }
 

@@ -5,7 +5,10 @@ public class TurretBlueprint
 {
     [Header("Tower info")]
     public string name;
-    public Sprite imageSprite;
+    [Tooltip("Image used on shop button and when a node with this tower is selected")]
+    public Sprite normalTowerImage;
+    [Tooltip("Image used when a node with this tower is selected")]
+    public Sprite upgradedTowerImage;
 
     [Header("Basic version")]
     public GameObject prefab;

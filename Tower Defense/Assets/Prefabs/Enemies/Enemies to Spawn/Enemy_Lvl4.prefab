@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffects: {fileID: 6043630998420528827, guid: b6a8ec0253005c6408aefd202b34f1ac,
     type: 3}
+  enemyMaterial: {fileID: 2100000, guid: 54a0327b53e74dc468834bba0d03d711, type: 2}
 --- !u!54 &7224844133993819086
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -71,6 +71,10 @@ public class NodeBuilder : MonoBehaviour
         playerStats.Money += turretBlueprint.SellPrice;
 
         DeleteTurret();
+
+        // Visual Effects
+        GameObject buildEffectGO = Instantiate(sellEffect, PositionToBuild, Quaternion.identity);
+        Destroy(buildEffectGO, 2f);
     }
 
     private void DeleteTurret()

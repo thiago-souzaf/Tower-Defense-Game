@@ -42,8 +42,10 @@ public class GameManager : MonoBehaviour
     }
 
     // TODO: Add a functionality to speed up the game
-
-    // TODO: Let the player choose between auto start every new round or wait for player to press start;
-
+    // TODO: Let the player choose between auto start every new round or wait for player to press start
     // TODO: Camera movement - change rotation when it goes down
+    // TODO: Show tower range - before building it and when selecting it
+    // TODO: Display enemies path direction before game start
+
+    
 }
