@@ -50,12 +50,6 @@ MonoBehaviour:
   range: 0
   enemyTag: Enemy
   towerAnimator: {fileID: 7056211231783968709}
-  info:
-    prefab: {fileID: 0}
-    name: 
-    cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
 --- !u!114 &2857705987263980240
 MonoBehaviour:
   m_ObjectHideFlags: 0

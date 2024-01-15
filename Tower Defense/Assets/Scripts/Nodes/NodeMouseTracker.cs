@@ -54,6 +54,7 @@ public class NodeMouseTracker : MonoBehaviour
         }
         if (selectionManager.HasTurretSelected)
         {
+            selectionManager.towerPreview.transform.position = nodeBuilder.PositionToBuild;
             rend.material.color = hoverEmptyNodeColor;
             return;
         }
@@ -61,6 +62,10 @@ public class NodeMouseTracker : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (selectionManager.HasTurretSelected)
+        {
+            selectionManager.towerPreview.transform.position = selectionManager.hiddenPosition;
+        }
         rend.material.color = startColor;
     }
 

@@ -58,8 +58,5 @@ public class GameManager : MonoBehaviour
         isGameFast = !isGameFast;
     }
 
-    // TODO: Show tower range - before building it and when selecting it
-    // TODO: Display enemies path direction before game start
-
     // TODO: Make the turtle regenerate life after a certain amount of time
 }

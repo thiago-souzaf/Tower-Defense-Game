@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
@@ -8,6 +7,9 @@ public class SelectionManager : MonoBehaviour
     public SelectedNodeUI nodeUI;
 
     public Shop shop;
+
+    public GameObject towerPreview;
+    public Vector3 hiddenPosition = new(0, -10, 0);
 
     private TurretBlueprint turretToBuild;
     public TurretBlueprint TurretToBuild
@@ -22,6 +24,7 @@ public class SelectionManager : MonoBehaviour
         }
         set
         {
+            Destroy(towerPreview);
             turretToBuild = value;
             // Deselect node when player select a tower on shop
             DeselectNode();
@@ -40,7 +43,10 @@ public class SelectionManager : MonoBehaviour
                 DeselectNode();
                 return;
             }
+            DeselectNode();
             selectedNode = value;
+            if (selectedNode.turret.TryGetComponent(out RangeShow range))
+            { range.ShowRangeIndicator(true); }
             turretToBuild = null;
             shop.ResetTowerName();
             nodeUI.SelectedNode = selectedNode;
@@ -65,11 +71,25 @@ public class SelectionManager : MonoBehaviour
         Debug.Log(turretBlueprintToBuild.name + " was selected to build");
         TurretToBuild = turretBlueprintToBuild;
         shop.SetTowerName(turretBlueprintToBuild.name);
+        
+        // Create a preview of the tower selected
+        towerPreview = Instantiate(turretBlueprintToBuild.prefab, hiddenPosition, Quaternion.identity);
+        foreach (MonoBehaviour c in towerPreview.GetComponents<MonoBehaviour>())
+        {
+            c.enabled = false;
+        }
     }
 
 
     public void DeselectNode()
     {
+        if (selectedNode == null)
+        {
+            return;
+        }
+
+        if (selectedNode.turret.TryGetComponent(out RangeShow range))
+        { range.ShowRangeIndicator(false); }
         selectedNode = null;
         nodeUI.Hide();
         

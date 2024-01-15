@@ -8900,6 +8900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeUI: {fileID: 255678608}
   shop: {fileID: 474910644}
+  towerPreview: {fileID: 0}
+  hiddenPosition: {x: 0, y: -10, z: 0}
 --- !u!114 &639866782
 MonoBehaviour:
   m_ObjectHideFlags: 0

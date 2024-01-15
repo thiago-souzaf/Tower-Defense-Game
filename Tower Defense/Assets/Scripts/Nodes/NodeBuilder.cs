@@ -22,6 +22,7 @@ public class NodeBuilder : MonoBehaviour
     private void Start()
     {
         playerStats = SelectionManager.Instance.GetComponent<PlayerStats>();
+        turret = null;
     }
 
     public void BuildTurret(TurretBlueprint blueprint)

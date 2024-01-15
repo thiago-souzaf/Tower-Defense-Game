@@ -47,7 +47,7 @@ public class GetClosestTarget : MonoBehaviour
             radius = turret.range;
         } else
         {
-            radius = 15f;
+            radius = 11f;
         }
         Gizmos.DrawWireSphere(transform.position, radius);
     }
