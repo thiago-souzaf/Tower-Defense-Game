@@ -11,6 +11,8 @@ public class SelectionManager : MonoBehaviour
     public GameObject towerPreview;
     public Vector3 hiddenPosition = new(0, -10, 0);
 
+    PlayerStats playerStats;
+
     private TurretBlueprint turretToBuild;
     public TurretBlueprint TurretToBuild
     {
@@ -47,8 +49,7 @@ public class SelectionManager : MonoBehaviour
             selectedNode = value;
             if (selectedNode.turret.TryGetComponent(out RangeShow range))
             { range.ShowRangeIndicator(true); }
-            turretToBuild = null;
-            shop.ResetTowerName();
+            DeselectTurret();
             nodeUI.SelectedNode = selectedNode;
         }
     }
@@ -63,11 +64,21 @@ public class SelectionManager : MonoBehaviour
             return;
         }
         Instance = this;
-        
+    }
+
+    private void Start()
+    {
+        playerStats = GetComponent<PlayerStats>();
     }
 
     public void SelectTurret(TurretBlueprint turretBlueprintToBuild)
     {
+        if (playerStats.Money < turretBlueprintToBuild.buildCost)
+        {
+            Debug.Log("Not enough money");
+            DeselectTurret();
+            return;
+        }
         Debug.Log(turretBlueprintToBuild.name + " was selected to build");
         TurretToBuild = turretBlueprintToBuild;
         shop.SetTowerName(turretBlueprintToBuild.name);
@@ -88,10 +99,16 @@ public class SelectionManager : MonoBehaviour
             return;
         }
 
-        if (selectedNode.turret.TryGetComponent(out RangeShow range))
+        if (selectedNode.turret && selectedNode.turret.TryGetComponent(out RangeShow range))
         { range.ShowRangeIndicator(false); }
         selectedNode = null;
         nodeUI.Hide();
-        
+    }
+
+    private void DeselectTurret()
+    {
+        turretToBuild = null;
+        shop.ResetTowerName();
+        Destroy(towerPreview);
     }
 }

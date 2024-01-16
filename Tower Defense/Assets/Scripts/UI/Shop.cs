@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -10,14 +9,17 @@ public class Shop : MonoBehaviour
     public GameObject buttonsParent;
     public GameObject buttonPrefab;
     public TurretBlueprint[] turretsToSelect;
-    
+
+    private ShopButtonInfo[] shopButtons;
 
     private void Start()
     {
+        shopButtons = new ShopButtonInfo[turretsToSelect.Length];
         ResetTowerName();
-        foreach(TurretBlueprint turret in turretsToSelect)
+        for(int i = 0; i < turretsToSelect.Length; i++)
         {
-            CreateButton(turret);
+            ShopButtonInfo btnToAdd = CreateButton(turretsToSelect[i]);
+            shopButtons[i] = btnToAdd;
         }
     }
 
@@ -33,18 +35,30 @@ public class Shop : MonoBehaviour
         selectedTowerName.color = new Color(1, 1, 1, 0.3f);
     }
 
-    private void CreateButton(TurretBlueprint turretInfo)
+    private ShopButtonInfo CreateButton(TurretBlueprint turretInfo)
     {
         GameObject _btn = Instantiate(buttonPrefab, buttonsParent.transform);
+        ShopButtonInfo btnInfo = _btn.GetComponent<ShopButtonInfo>();
+        btnInfo.towerCost = turretInfo.buildCost;
 
         // Sets button onClick event to call SelectTurret
-        _btn.GetComponent<Button>().onClick.AddListener(() => SelectionManager.Instance.SelectTurret(turretInfo));
+        btnInfo.button.onClick.AddListener(() => SelectionManager.Instance.SelectTurret(turretInfo));
 
         // Sets button image with turret sprite
-        _btn.GetComponentsInChildren<Image>()[1].sprite = turretInfo.normalTowerImage;
+        btnInfo.towerImage.sprite = turretInfo.normalTowerImage;
 
         // Sets turret price
-        _btn.GetComponentInChildren<TextMeshProUGUI>().text = "$ " + turretInfo.buildCost;
+        btnInfo.priceText.text = "$ " + btnInfo.towerCost;
 
+        return btnInfo;
+    }
+
+    public void CheckIfMoneyIsEnough(int currentMoney)
+    {
+        foreach (ShopButtonInfo buttonInfo in shopButtons)
+        {
+            // button is interactable if the tower cost is less or equal to current money
+            buttonInfo.button.interactable = buttonInfo.towerCost <= currentMoney;
+        }
     }
 }

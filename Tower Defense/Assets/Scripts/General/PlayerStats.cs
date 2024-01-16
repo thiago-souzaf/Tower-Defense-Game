@@ -5,14 +5,19 @@ public class PlayerStats : MonoBehaviour
 
     private UIManager uiManager;
     private GameManager gameManager;
-    
+    public Shop shop;
+
     // Money properties
     public int startMoney = 400;
     private int money;
     public int Money
     {
         get { return money; }
-        set { money = value; uiManager.UpdateMoney(money); }
+        set {
+            money = value;
+            uiManager.UpdateMoney(money);
+            shop.CheckIfMoneyIsEnough(money);
+        }
     }
 
     // Lives properties

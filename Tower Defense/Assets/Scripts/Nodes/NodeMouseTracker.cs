@@ -38,7 +38,8 @@ public class NodeMouseTracker : MonoBehaviour
             return;
         }
         nodeBuilder.BuildTurret(selectionManager.TurretToBuild);
-         
+        selectionManager.SelectTurret(selectionManager.TurretToBuild);
+
     }
 
     private void OnMouseEnter()
