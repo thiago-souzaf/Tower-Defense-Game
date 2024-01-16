@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public UnityEvent OnWaveComplete;
+    public int moneyPerWave = 50;
     private int enemiesAlive;
     public int EnemiesAlive
     {
@@ -30,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
                     OnWaveComplete.Invoke();
                     GameManager.isWaveOn = false;
                 }
-                playerStats.IncrementMoney(100 + waveIndex);
+                playerStats.IncrementMoney(moneyPerWave + waveIndex);
             }
         }
     }
