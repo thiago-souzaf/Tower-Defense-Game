@@ -43,6 +43,7 @@ public class Shop : MonoBehaviour
 
         // Sets button onClick event to call SelectTurret
         btnInfo.button.onClick.AddListener(() => SelectionManager.Instance.SelectTurret(turretInfo));
+        btnInfo.button.onClick.AddListener(() => AudioManager.Instance.PlaySoundFX(AudioManager.Instance.selectTurret));
 
         // Sets button image with turret sprite
         btnInfo.towerImage.sprite = turretInfo.normalTowerImage;

@@ -3308,6 +3308,79 @@ MonoBehaviour:
   upgradeCost: {fileID: 1341396823}
   upgradeButton: {fileID: 252605591}
   sellCost: {fileID: 1193684347}
+--- !u!1001 &257525816
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4838640075043524235, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838640075043524235, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127039594505476706, guid: 32e438f42a8fe8e479008f260cbad2e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32e438f42a8fe8e479008f260cbad2e1, type: 3}
 --- !u!1001 &258704716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9103,8 +9176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 474910644}
-  startMoney: 210
-  startLives: 50
+  startMoney: 500
+  startLives: 20
   lastRound: 0
 --- !u!114 &639866784
 MonoBehaviour:
@@ -29715,3 +29788,4 @@ SceneRoots:
   - {fileID: 1355483923}
   - {fileID: 795675410}
   - {fileID: 648730882}
+  - {fileID: 257525816}

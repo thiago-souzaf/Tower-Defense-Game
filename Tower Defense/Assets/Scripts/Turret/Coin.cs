@@ -54,6 +54,8 @@ public class Coin : MonoBehaviour
         PlayerStats playerStats = SelectionManager.Instance.GetComponent<PlayerStats>();
         playerStats.Money += coinValue;
 
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.collectCoin);
+
         coinMesh.enabled = false;
         collectFX.SetActive(true);
         Destroy(gameObject, 1f);

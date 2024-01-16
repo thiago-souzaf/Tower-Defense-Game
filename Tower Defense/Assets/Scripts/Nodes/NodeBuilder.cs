@@ -42,6 +42,9 @@ public class NodeBuilder : MonoBehaviour
         Destroy(buildEffectGO, 2f);
 
         turretBlueprint = blueprint;
+
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.placeTurret);
+
     }
 
     public void UpgradeTurret()
@@ -65,6 +68,9 @@ public class NodeBuilder : MonoBehaviour
         Destroy(buildEffectGO, 2f);
 
         isUpgraded = true;
+
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.upgradeTurret);
+
     }
 
     public void SellTurret()
@@ -76,6 +82,9 @@ public class NodeBuilder : MonoBehaviour
         // Visual Effects
         GameObject buildEffectGO = Instantiate(sellEffect, PositionToBuild, Quaternion.identity);
         Destroy(buildEffectGO, 2f);
+
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.sellTurret);
+
     }
 
     private void DeleteTurret()

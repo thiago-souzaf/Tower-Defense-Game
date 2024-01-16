@@ -84,6 +84,8 @@ public class UIManager : MonoBehaviour
         {
             StopTime(false);
         }
+
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.togglePause);
     }
     #endregion
 

@@ -44,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
     {
         enemyHealth.Die(false);
         playerStats.Lives--;
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.enemyEndPath);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -25,12 +25,14 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
         autoStart = false;
         isGameFast = Time.timeScale > 1.5f;
+        isWaveOn = false;
     }
     public void EndGame()
     {
         isGameOver = true;
         OnGameOver.Invoke();
         Debug.Log("Game Over");
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.loseLevel);
     }
 
     public void WinLevel()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         OnLevelComplete.Invoke();
         Debug.Log("Level Finished");
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.winLevel);
     }
 
     public void StartGame()
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
         isWaveOn = true;
         OnGameStart.Invoke();
         Debug.Log("Game has started");
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.startRound);
     }
 
     public void SetAutoStart(bool value)

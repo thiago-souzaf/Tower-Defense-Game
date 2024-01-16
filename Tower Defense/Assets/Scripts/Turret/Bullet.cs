@@ -42,6 +42,8 @@ public class Bullet : MonoBehaviour
         {
             enemyHealth.TakeDamage(bulletDamage);
         }
+        AudioManager.Instance.PlaySoundFX(AudioManager.Instance.hitEnemy);
+
         Destroy(gameObject);
     }
 
