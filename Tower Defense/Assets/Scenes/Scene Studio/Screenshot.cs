@@ -3,7 +3,7 @@ using UnityEngine;
 public class Screenshot : MonoBehaviour
 {
     [Header("Screenshot settings")]
-    public string path = "/Assets/Screenshots/";
+    public string path = "Assets/Screenshots/";
     public string filePrefix = "Screenshot_";
     public string fileExtension = "jpg";
     public KeyCode keyToScreenshot = KeyCode.K;
