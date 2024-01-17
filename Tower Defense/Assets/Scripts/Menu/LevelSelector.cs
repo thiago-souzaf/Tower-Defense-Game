@@ -8,6 +8,8 @@ public class LevelSelector : MonoBehaviour
 
 	public Button[] levelButtons;
 
+	public CameraRotation camRotation;
+
     private void Start()
     {
 		int levelReached = PlayerPrefs.GetInt("levelReached", 1);
@@ -25,4 +27,5 @@ public class LevelSelector : MonoBehaviour
 	{
 		fader.FadeTo(levelToLoad);
 	}
+
 }
