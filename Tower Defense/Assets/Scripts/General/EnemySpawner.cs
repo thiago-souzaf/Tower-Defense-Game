@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private Transform spawnPoint;
+    private Vector3 spawnPoint;
 
     public Wave[] waves;
 
@@ -59,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoint = GameObject.Find("START").transform;
+        spawnPoint = GameObject.Find("START").transform.position;
         waveIndex = 0;
         amountOfWaves = waves.Length;
         playerStats.lastRound = amountOfWaves;
@@ -92,7 +93,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemyToSpawn)
     {
-        Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity);
+        Instantiate(enemyToSpawn, new Vector3(spawnPoint.x, enemyToSpawn.transform.position.y, spawnPoint.z), Quaternion.identity);
         enemiesAlive++;
     }
 

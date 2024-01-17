@@ -3,12 +3,9 @@ using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour
 {
-
 	public SceneFader fader;
 
 	public Button[] levelButtons;
-
-	public CameraRotation camRotation;
 
     private void Start()
     {
